@@ -1,14 +1,5 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-<<<<<<< HEAD
-    <div class="errors">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-=======
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
@@ -16,7 +7,6 @@
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
->>>>>>> 590302ca8661b45de3f9a25fcaf356f64553edb6
       </ul>
     </div>
   <% end %>
@@ -25,10 +15,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 590302ca8661b45de3f9a25fcaf356f64553edb6
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -44,8 +31,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 590302ca8661b45de3f9a25fcaf356f64553edb6
 <% end %>
