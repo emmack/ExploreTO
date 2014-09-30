@@ -19,13 +19,6 @@ Rails.application.routes.draw do
   # resources :password_resets
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
-
-  resources :users
-  resources :user_sessions, only: [:new, :create, :destroy]
-
-  get 'login' => 'user_sessions#new', :as => :login
-  post 'logout' => 'user_sessions#destroy', :as => :logout
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
