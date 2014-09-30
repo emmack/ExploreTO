@@ -8,6 +8,7 @@
 </head>
 <body>
   <header>
+    <div id="logo"><h2>LOGO GOES HERE</h2></div>
     <div id="nav">
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
@@ -21,6 +22,7 @@
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
+
   </header>
 
 <%= yield %>

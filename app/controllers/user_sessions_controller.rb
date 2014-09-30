@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+
   skip_before_filter :require_login, except: [:destroy]
 
   def new
@@ -18,3 +19,4 @@ class UserSessionsController < ApplicationController
     redirect_to(:users, notice: 'Logged out!')
   end
 end
+
