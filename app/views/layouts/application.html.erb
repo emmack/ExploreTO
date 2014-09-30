@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div class="logo"><h3>LOGO GOES HERE</h3></div>
+    <div class="login-logout">
+      <%= link_to "Sign up now", new_user_path %>
+    </div>
+  </header>
 
 <%= yield %>
 
