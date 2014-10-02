@@ -2,7 +2,7 @@ class FavouritesController < ApplicationController
   before_filter :require_login
 
   def index
-    @favourites = Favourite.find_by(params[:user_id])
+    @favourites = Favourite.where('user_id = ?', params[:user_id])
   end
 
   def new
@@ -25,18 +25,17 @@ class FavouritesController < ApplicationController
     @favourite = current_user.favourites
   end
 
-  def download
-    send_file(specific_document) # sanitize params
+  def download # not quite working yet — want it to download file and also mark downloaded as true
+    @favourite = Favourite.find(params[:favourite])
+    @favourite.data_set = DataSet.find(params[:data_set])
+    return send_file "#{@favourite.data_set.file}"
+    redirect_to user_favourites_path(current_user)
     @favourite.downloaded = true
   end
 
   private
   def favourite_params
     params.require(:favourite).permit(:data_set)
-  end
-
-  def specific_document # sanitize params
-    @favourite.data_set.s
   end
 
 end

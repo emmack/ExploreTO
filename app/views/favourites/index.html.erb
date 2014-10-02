@@ -1,0 +1,10 @@
+<h1>My Favourite Maps</h1>
+
+<% if @favourites %>
+  <% @favourites.each do |favourite| %>
+    <h3><%= favourite.data_set.name %></h3>
+    <p><%= link_to "Download raw map data (format: #{favourite.data_set.format})", "#{favourite.data_set.file}" %></p>
+  <% end %>
+<% else %>
+  <p>No favourites yet.</p>
+<% end %>
