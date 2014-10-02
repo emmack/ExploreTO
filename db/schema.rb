@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001215234) do
+ActiveRecord::Schema.define(version: 20141002173136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "data_sets", force: true do |t|
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favourite_data", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "data_set_id"
+    t.boolean  "downloaded"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
