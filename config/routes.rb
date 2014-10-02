@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
+
+  get 'download' => 'data_sets#download', :as => :download
   
   # resources :user_sessions
   # resources :password_resets
