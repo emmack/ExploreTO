@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_and_belongs_to_many :data_sets
+  has_many :favourite_data
+  
 end

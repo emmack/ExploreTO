@@ -2,5 +2,5 @@ class DataSet < ActiveRecord::Base
 
   validates :file, presence: true
 
-  has_and_belongs_to_many :users
+  has_many :favourite_data
 end

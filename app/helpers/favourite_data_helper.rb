@@ -1,0 +1,2 @@
+module FavouriteDataHelper
+end
