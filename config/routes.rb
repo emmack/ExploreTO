@@ -5,11 +5,16 @@ Rails.application.routes.draw do
 
   root :to => 'users#index'
   resources :user_sessions, only: [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    resources :favourites
+  end
+  resources :data_sets, only: [:show]
   resources :password_resets, only: [:create, :edit, :update]
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
+
+  get 'download' => 'favourites#download', :as => :download
   
   # resources :user_sessions
   # resources :password_resets

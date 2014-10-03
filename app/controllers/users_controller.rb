@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :load_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :require_login, only: [:index, :new, :create]
 
   def index
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.new(user_params)
 
     if @user.save
@@ -23,15 +22,17 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    
   end
 
   def update
-    
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -40,8 +41,10 @@ class UsersController < ApplicationController
 
   private
   def user_params
-
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 
+  def load_user
+    @user = User.find(params[:id])
   end
 end
