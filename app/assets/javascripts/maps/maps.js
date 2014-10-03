@@ -4,20 +4,30 @@ $(document).on('ready page:load', function () {
   var menuToggle = $('.centered-navigation-menu-button');
   var signUp = $('.sign-up');
 
-  $(menuToggle).on('click', function(e) {
-    e.preventDefault();
-    menu.slideToggle(function(){
-      if(menu.is(':hidden')) {
-        menu.removeAttr('style');
-      }
-    });
-  });
+  // $(menuToggle).on('click', function(e) {
+  //   e.preventDefault();
+  //   menu.slideToggle(function(){
+  //     if(menu.is(':hidden')) {
+  //       menu.removeAttr('style');
+  //     }
+  //   });
+  // });
 
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoiMndTTGtIdyJ9.14KHP67dI919VFxtfr9eIQ';
    var map = L.mapbox.map('map', 'eckotzer.4a2f194e')
     .setView([43.6525, -79.381667], 10);
     var layers = document.getElementById('menu-ui');
+
+
+var hues = [
+   '#f1eef6',
+'#d0d1e6',
+'#a6bddb',
+'#74a9cf',
+'#2b8cbe',
+'#045a8d'];
+
 
 var popup = new L.Popup({ autoPan: false });
 
