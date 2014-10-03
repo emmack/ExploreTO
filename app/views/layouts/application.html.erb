@@ -2,12 +2,19 @@
 <html>
 <head>
   <title>ExploreTO</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+<script src="https://cdn.rawgit.com/turban/Leaflet.Sync/master/L.Map.Sync.js"></script>
+<style type="text/css">
+      @import url(//cdn.leafletjs.com/leaflet-0.5/leaflet.css);
+      @import url(css/edit.css?v=91386a2);
+    </style>
 </head>
 <body>
   <header>
@@ -29,6 +36,7 @@
   </header>
 
 <%= yield %>
+
 
 </body>
 </html>

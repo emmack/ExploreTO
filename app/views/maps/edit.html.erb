@@ -1,0 +1,90 @@
+<div id="main" class="empty">
+
+<div id ="recipe">
+	<div id='layers'>
+	</div>
+	<button id='add-layer' class='big add sprite has-tooltip' data-placement='left' data-origional-title="Add a new layer">
+		'+ layer'
+		<div class = 'tooltip left' style='left: -172px; top:35px'>
+		<div class ='tooltip-arrow'></div>
+		<div class ='tooltip-inner'>Add a new layer.</div>
+		</div>
+	</button>
+	<p id='full message' class='label'>
+		" Sorry, we only allow "<span clas='max-layers'>5</span>
+		" layers. "
+	</p>
+</div>
+
+<div id='display'>
+	<div id='map' class='leaflet-container leaflet fade-anim'>
+		<ul id='attribution'></ul>
+		<div id'map-controls'>
+			<button id='make-image' class='big sprite has-tooltip' data-placement='left' data-original-title='Make an image of this map.'>
+			<'image'>
+			<div class='tooltip left' style='left: 145px; top: -12px;'>
+				<div class='tooltip-arrow'></div>
+				<div class='tooltip-inner'>Make an image of this map</div>
+			</div>
+		</button>
+	<div id='image-preview' class='popover in left'>
+		<div class='arrow'></div>
+		<h3 class ='popover-title title'> Finished!</h3>
+		<div class='popover-content content'></div>
+		<a class='close'>x</a>
+	</div>
+</div>
+
+<div id='first-layer'>
+	<h3>Choose a color:</h3>
+	<div class='color buttons'>
+		<button class="color" style="background-color: rgb(255, 48, 48);"></button>
+	</div>
+	<a class="close">x</a>
+</div>
+</div>
+</div>
+
+<div id='image-controls'> class='popover right in'> 
+	<div class ='arrow'></div>
+	<a class-'close'>x</a>
+	<h3 class='popover-title'> Edit map layer</h3>
+	<form class='popover-content'>
+		<div class="row-fluid">
+          <label class="span3">Opacity</label>
+          <span class="span6 slider">
+            <input data-key="alpha" type="range" min="0" max="100" step="10" class="range span11">
+          </span>
+          <span class="span3 text input-append">
+            <input data-key="alpha" type="text" class="text span7">
+            <span class="add-on">%</span>
+          </span>
+        </div>
+        <div class="row-fluid">
+          <label class="span3">Brightness</label>
+          <span class="span6 slider">
+            <input data-key="bright" type="range" min="-100" max="100" step="10" class="range span11">
+          </span>
+          <span class="span3 text input-append">
+            <input data-key="bright" type="text" class="text span7">
+            <span class="add-on">%</span>
+          </span>
+        </div>
+    </form>
+</div>
+
+    <div id="layer-palette" class="popover in right">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Add a Layer</h3>
+      <div class="popover-content">
+        <select class="source input-block-level">
+          <option value="">Select a map layer:</option>
+        <optgroup label="Backgrounds"><option value="toner">Toner</option><option value="toner-background">Toner Background</option><option value="toner-lite">Toner Lite</option><option value="terrain">Terrain</option><option value="terrain-background">Terrain Background</option><option value="watercolor">Watercolor</option><option value="naip">MapBox Satellite</option></optgroup><optgroup label="Lines &amp; Labels"><option class="alpha" value="toner-lines">Toner Lines</option><option class="alpha" value="toner-labels">Toner Labels</option><option class="alpha" value="toner-hybrid">Toner Lines &amp; Labels</option><option class="alpha" value="terrain-lines">Terrain Lines</option><option class="alpha" value="terrain-labels">Terrain Labels</option><option class="alpha" value="streets-and-labels">MapBox Streets &amp; Labels</option></optgroup><optgroup label="Features"><option class="alpha" value="mapbox-water">Water</option><option class="alpha" value="buildings">Buildings</option><option class="alpha" value="parks">Parks</option><option value="water-mask">Water Mask (black/white)</option></optgroup></select>
+        <p>Or, select a color:</p>
+        <div class="colors buttons">
+        <button class="color" style="background-color: rgb(255, 48, 48);"></button><button class="color" style="background-color: rgb(255, 154, 48);"></button><button class="color" style="background-color: rgb(255, 207, 48);"></button><button class="color" style="background-color: rgb(154, 154, 48);"></button><button class="color" style="background-color: rgb(180, 166, 137);"></button><button class="color" style="background-color: rgb(217, 218, 206);"></button><button class="color" style="background-color: rgb(96, 201, 254);"></button><button class="color" style="background-color: rgb(101, 101, 255);"></button><button class="color" style="background-color: rgb(154, 0, 207);"></button><button class="color" style="background-color: rgb(255, 101, 255);"></button><button class="color" style="background-color: rgb(151, 99, 50);"></button><button class="color" style="background-color: rgb(48, 59, 48);"></button></div>
+      </div>
+      <a class="close">×</a>
+    </div>
+    <script src="js/edit.js"></script>
+

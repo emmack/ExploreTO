@@ -1,0 +1,596 @@
+@import url(bootstrap.css);
+@import url(main.css);
+
+body {
+  overflow: hidden;
+}
+
+#header .container {
+  width: auto !important;
+}
+
+#main {
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  background-image: url();
+}
+
+#recipe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  z-index: 999;
+
+  width: 35%;
+  background-color: rgba(255,255,255,0);
+
+  border-right: 1px solid #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.3);
+}
+
+#add-layer {
+  position: absolute;
+  top: 10px;
+  right: -17px;
+  z-index: 900;
+  margin: 0;
+}
+
+#display {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+  #display #map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: transparent !important;
+  }
+
+  #display #output {
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    padding: 2px 5px;
+  }
+
+  #display #map-controls {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+  }
+
+  #display #map-controls > a,
+  #display #map-controls > button {
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    margin: -15px 0 0 8px;
+  }
+
+  #display #map-controls > .icon {
+    font-size: 35px;
+    line-height: 35px;
+  }
+
+.input-prepend,
+.input-append {
+  margin-bottom: 0;
+}
+
+.popover {
+  width: 400px;
+  max-width: 1000px !important;
+  background: #fff;
+  padding: 0;
+  border: 3px solid #000;
+  border-radius: 4px;
+}
+
+  .popover.right {
+    left: 100%;
+    right: auto;
+    top: 50%;
+  }
+
+  .popover.attached {
+    display: block;
+  }
+
+  .popover.right .arrow {
+    top: 50%;
+    left: -23px;
+    margin-top: -10px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 20px solid #000000;
+  }
+
+  .popover.left .arrow {
+    top: 50%;
+    right: -23px;
+    margin-top: -15px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #000000;
+  }
+
+  .popover .popover-title {
+    font-size: 20px;
+    font-weight: bold;
+    background: none;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .popover form {
+    margin: 0;
+    padding: 14px;
+    padding-bottom: 7px;
+  }
+
+  span.swatch {
+    height: 25px;
+    background: red;
+    margin-bottom: 10px;
+  }
+
+  a.close {
+    position: absolute;
+    float: none;
+    font-size: 26px;
+    top: 8px;
+    right: 13px;
+    margin: 0;
+    color: #f00;
+    opacity: 1;
+  }
+
+  form .row-fluid.toggle {
+    margin-bottom: 5px;
+  }
+
+  form .row-fluid > label:first-child {
+    margin-top: 5px;
+  }
+
+  form .sub > *:first-child {
+    text-align: right;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-right: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  form .tint-rgb > span:last-child {
+  }
+
+  label.on span {
+    padding: 4px;
+    margin: -4px 0 0 0px;
+    text-shadow: 1px 1px 1px #fff;
+  }
+
+  label.on .inverted {
+    color: #fff;
+    background: #000;
+  }
+
+  label.on .inverted {
+    color: #fff;
+    background: #000;
+  }
+
+.leaflet-top, .leaflet-left,
+.leaflet-bottom, .leaflet-right {
+  z-index: 100;
+}
+
+.leaflet-touch .leaflet-control-zoom,
+.leaflet-bar {
+  box-shadow: none !important;
+  border-radius: none !important;
+}
+
+.leaflet-touch .leaflet-control-zoom,
+.leaflet-control-zoom {
+  border: none;
+  border-radius: 0;
+}
+
+.leaflet-control-zoom a {
+  width: 35px;
+  height: 35px;
+  color: #000;
+  font-size: 35px;
+  font-weight: normal;
+  line-height: 35px;
+  background: #ff0;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 0 8px 0;
+  text-decoration: none;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.leaflet-control-zoom-out {
+  line-height: 35px !important;
+}
+
+.layer {
+  position: relative;
+  border-bottom: 1px solid #fff;
+  clear: both;
+}
+
+.layer .title {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  z-index: 3;
+}
+
+.layer .map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: transparent !important;
+}
+
+.layer > .swatch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.layer .buttons button {
+  position: absolute;
+  z-index: 10;
+}
+
+.layer button.adjust {
+  top: 50%;
+  right: 10px;
+  margin-top: -14px;
+}
+
+.layer button.remove {
+  top: 50%;
+  left: 10px;
+  margin-top: -14px;
+}
+
+.layer button.remove > span:first-child {
+  position: relative;
+  top: -3px;
+}
+
+.layer button.move-up {
+  top: 10px;
+  left: 50%;
+  margin-left: -17px;
+}
+
+.layer button.move-down {
+  bottom: 10px;
+  left: 50%;
+  margin-left: -17px;
+}
+
+button.big {
+  font-size: 35px;
+  line-height: 35px;
+  height: 35px;
+  min-width: 35px;
+  width: auto !important;
+  padding: 0;
+
+  color: #000;
+  background-color: #ff0;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  margin: 0 0 0 4px;
+}
+
+#recipe button.big[disabled] {
+  opacity: .5;
+  -webkit-filter: saturate(0);
+}
+
+button.big:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.layer:first-child button.move-up,
+.layer:last-child button.move-down {
+  display: none;
+}
+
+button.sprite {
+  width: 35px !important;
+  height: 35px !important;
+  background-image: url(images/sprite.png);
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+  button.sprite:hover {
+    color: transparent !important;
+    background-color: transparent !important;
+  }
+
+  button.search           { background-position: -200px -100px; }
+  button.search:hover     { background-position: -200px -200px; }
+
+  button.add              { background-position: -100px -100px; }
+  button.add:hover        { background-position: -100px -200px; }
+
+  button.move-up          { background-position:    2px -300px; }
+  button.move-up:hover    { background-position:    2px -400px; }
+
+  button.move-down        { background-position: -100px -300px; }
+  button.move-down:hover  { background-position: -100px -400px; }
+
+  button.adjust           { background-position: -200px -300px; }
+  button.adjust:hover     { background-position: -200px -400px; }
+
+button#make-image {
+  width: 120px !important;
+  background-position: -200px 0;
+}
+
+button#make-image:hover {
+  background-position: -200px -45px;
+}
+
+button#make-image.making {
+  background-color: #000;
+  background-image: url(images/button-make-image-making.png);
+  background-position: 0 0;
+}
+
+/*
+#recipe.full button.add {
+  display: none;
+}
+*/
+
+#full-message {
+  color: #000;
+  background: #ff0;
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  padding: 0px 4px;
+  width: 180px;
+  margin: -12px 0 0 -94px;
+}
+
+#recipe.full #full-message {
+  display: block;
+  z-index: 900;
+}
+
+#layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+#layer-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  text-align: right;
+  z-index: 500;
+}
+
+.invert-mask {
+  display: none;
+}
+
+.masked .invert-mask {
+  display: block;
+}
+
+.tint-swatch {
+  min-width: 1em;
+  display: block;
+  margin-right: -26px !important;
+}
+
+#image-controls fieldset.tint {
+  display: none;
+}
+
+#image-controls.tinted fieldset.tint {
+  display: block;
+}
+
+#layer-palette {
+  width: 410px;
+  top: 0;
+  margin-left: 26px;
+  margin-top: 4px !important;
+}
+
+  #layer-palette .arrow {
+    top: 15px;
+  }
+
+  #layer-palette p {
+    margin: 0 0 10px 0;
+  }
+
+#image-preview {
+  width: 200px;
+  margin-left: -217px;
+}
+
+  #image-preview img.thumb {
+    display: block;
+    margin-top: 14px;
+    width: 172px;
+  }
+
+#first-layer {
+  display: none;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+
+  padding: 20% 60px;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+#main.empty #first-layer {
+  display: block;
+}
+
+#main.empty #recipe {
+  background: #fff;
+}
+
+#main.empty #add-layer {
+  width: 100px !important;
+  height: 100px !important;
+  right: -50px;
+  background-position: 0 0 ;
+}
+
+  div.buttons {
+    line-height: 0;
+  }
+
+  div.colors {
+    width: 384px;
+  }
+
+    div.colors .color {
+      width: 64px;
+      height: 64px;
+    }
+
+  #layer-palette .color {
+    width: 32px;
+    height: 32px;
+  }
+
+  #first-layer button,
+  #layer-palette button {
+    display: inline-block;
+    line-height: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #first-layer button img {
+    display: block;
+    margin: 0;
+  }
+
+#search {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 40px;
+  padding: 0;
+  margin: 0;
+
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+  #search button {
+    margin: 0;
+  }
+
+  #search input {
+    display: inline-block;
+    margin: 0;
+  }
+
+  #search input[type=text] {
+    border-radius: 0;
+    border: none;
+    height: 35px;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0 0 0 8px;
+    margin: 0;
+
+    color: #000;
+    background: #ff0;
+
+    box-shadow: none;
+    width: auto !important;
+  }
+
+  #search.open {
+    width: auto;
+  }
+
+#attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: right;
+  margin: 0;
+}
+
+#attribution li {
+  float: right;
+  clear: right;
+  display: inline-block;
+  white-space: pre;
+  width: auto;
+  color: #fff;
+  background: #000;
+  padding: 0 4px;
+}
