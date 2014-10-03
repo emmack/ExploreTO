@@ -1,5 +1,6 @@
 class FavouritesController < ApplicationController
   before_filter :require_login
+  skip_before_action :verify_authenticity_token, only: :download
 
   def index
     @favourites = Favourite.where('user_id = ?', params[:user_id])
@@ -28,9 +29,9 @@ class FavouritesController < ApplicationController
   def download # not quite working yet — want it to download file and also mark downloaded as true
     @favourite = Favourite.find(params[:favourite])
     @favourite.data_set = DataSet.find(params[:data_set])
-    return send_file "#{@favourite.data_set.file}"
-    redirect_to user_favourites_path(current_user)
+    send_file "#{Rails.root}/public#{@favourite.data_set.file}"
     @favourite.downloaded = true
+    @favourite.save
   end
 
   private
