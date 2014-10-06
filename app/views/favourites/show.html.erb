@@ -3,5 +3,5 @@
 <% if @favourite.tag_list %>
   Tags:<br>
   <em><%= @favourite.tag_list %></em><br>
-  <%= link_to "Edit tags", edit_user_favourite_url[current_user.id, @favourite.id] %>
+  <%= link_to "Edit tags", edit_user_favourite_url(current_user.id, @favourite.id) %>
 <% end %>

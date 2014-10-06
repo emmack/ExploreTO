@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   end
   resources :data_sets, only: [:show]
   resources :password_resets, only: [:create, :edit, :update]
+  resources :maps
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   get 'download' => 'favourites#download', :as => :download
+  get 'home' => 'users#home', :as => :home
+
   
   # resources :user_sessions
   # resources :password_resets

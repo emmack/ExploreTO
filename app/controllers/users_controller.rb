@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:index, :new, :create]
+  skip_before_filter :require_login, only: [:index, :new, :create, :home]
+
+  def home
+    render :home
+  end
 
   def index
     @users = User.all

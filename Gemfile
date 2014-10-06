@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem 'sorcery'
 
 gem 'pg'
+gem 'bourbon'
+gem 'bitters'
+gem 'neat'
 
 gem 'pry'
 
