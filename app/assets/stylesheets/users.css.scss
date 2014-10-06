@@ -1,26 +1,241 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.ui-button {
-  position:absolute;
-  top:10px;
-  right:10px;
-  z-index:1000;
-  }
-#map {
-  width:50%;
-  height:500px;
-  }
-#snapshot {
-  position:absolute;
-  top:0;bottom:0;right:0;
-  width:50%;
+
+
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items-lines {
+  $grid-items-background: $base-background-color;
+  $grid-item-background: $base-background-color;
+  $grid-item-border: 1px solid transparentize($base-font-color, .8); 
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: $base-font-color;
+  $grid-item-height: 14em;
+
+  @include clearfix;
+  position: relative;
+    
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    height: $grid-item-height;
+    background: $grid-item-background;
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+    float: right;
+    padding: 2em;
+    border-right: $grid-item-border;
+    border-bottom: $grid-item-border;
+    cursor: pointer;
+
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
+    }
+
+    &:hover {
+      background: transparentize($grid-item-color, .95);
+    }
   }
 
+  .grid-item img {
+      display: block;
+      height: 2.5em;
+      margin-bottom: 1.2em;
+      opacity: .2;
+    }
+
+  .grid-item h1 {
+      color: $grid-item-color;
+      font-size: 1.3em;
+      margin-bottom: .4em;
+    }
+
+  .grid-item p {
+      color: transparentize($grid-item-color, .4);
+      @include media($medium-screen) {
+        max-width: 70%;
+      }
+    }
+
+  .grid-item-big {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }  
+    }
+  }
+
+  
+// this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+  .bottom-cover {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 3px;
+    background: $grid-items-background;
+  }
+
+  .right-cover {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 4px;
+    background: $grid-items-background;
+  }
+}
+
+.wrapper {
+@include outer-container;
+.primary { @include span-columns(3); }
+.secondary { @include span-columns(6); }
+.third { @include span-columns(3); }
+}
+
+
+#logo{
+  h2{
+    font-family: 'hipster script pro';
+        color:#133d71;
+        font-size: 40px;
+        padding-top:15px;
+        padding-left:15px;
+  }
+}
+#nav{
+  p{
+    font-family: 'campton';
+     padding-top:15px;
+    padding-left:15px;
+  }
+}
+
+.hero {
+  $hero-background-top: darken($base-accent-color, 25); 
+  $hero-background-bottom: adjust-hue($hero-background-top, -70);
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: 'https:
+//raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+
+  @include background(url("/assets/toronto2.png"));
+
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size:100%; 
+ 
+  padding-bottom: 4em;
+  padding-top: 7em;
+height: 876px;
+  .hero-logo img {
+    height: 3em;
+    margin-bottom: 2.5em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    padding: 3em;
+    margin: auto;
+    text-align: center;
+    // color: $hero-color;
+
+    button {
+      @include button(simple, $base-background-color);
+      font-size: $base-font-size;
+      outline: none;
+    }
+
+    .hero-copy {
+      text-align: center;
+      
+      h1 {
+        font-size:150px;
+        margin-bottom: .5em;
+        font-family: 'hipster script pro';
+        color:#133d71;
+        margin-bottom: 0px;
+padding-left: 115px;
+
+
+
+        @include media($large-screen) {
+          // font-size: 1.8em;
+        }
+      }
+        h2{
+        font-size:40px;
+        margin-bottom: .5em;
+        font-family: 'hipster script pro';
+        color:#133d71;
+        margin-bottom: 0px;
+
+}
+
+      p {
+        font-family: 'campton';
+        margin: auto;
+        margin-bottom: 3em; 
+        font-weight: 300;
+        line-height: 1.4em;
+        color:#5e9ca0;
+
+        @include media($large-screen) {
+       font-size: 2.1em;
+max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+.ui-button {
+
+
+  z-index:1000;
+  }
+
+
+#map {
+  width:100%;
+  height:800px;
+  }
+
+#snapshot {
+
+  width:100%;
+  }
+
+
+
+.home{
+  font-family: 'bebas';
+  text-align: center;
+  height:100%;
+  width:100%;
+  // margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  h1{
+    font-size: 50px;
+  }
+  p{
+  font-size: 15px;
+  }
+}
 
 body {
   margin: 0;
   padding: 0;
+  // background-image: url("/assets/toronto.png")
 }
 
 
@@ -47,9 +262,9 @@ line-height: 1.5
 }
 
 #map-ui {
-  position: absolute;
+  
   height: 100%;
-  right: 0;
+  
   width: 220px;
   margin: 0;
   padding: 0;
@@ -115,6 +330,7 @@ user-select: none;
   min-height: 80px;
   min-width: 320px;
 }
+
 
  #canvas {
             margin-left: 20px;

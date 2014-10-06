@@ -708,8 +708,19 @@ function addLayer(layer, name, zIndex, info) {
   ui.appendChild(link);
 };
 
+document.getElementById('snap').addEventListener('click', function() {
+    leafletImage(map, doImage);
+});
 
-
+function doImage(err, canvas) {
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    snapshot.innerHTML = '';
+    snapshot.appendChild(img);
+}
 
 });
 

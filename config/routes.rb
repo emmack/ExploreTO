@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
+  get 'home' => 'users#home', :as => :home
   
   # resources :user_sessions
   # resources :password_resets

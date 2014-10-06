@@ -9,17 +9,18 @@
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
 </head>
 <body>
   <header>
-    <div id="logo"><h2>ExploreTO</h2></div>
+    <div id="logo"><h2>Map Time</h2></div>
     <div id="nav">
     <% if current_user %>
-      <%= link_to "Go to Profile", user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
+     <p> <%= link_to "Go to Profile", user_path(current_user.id) %>
+      <%= link_to "Logout", :logout, method: :post %></p>
     <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
+      <p><%= link_to "Register", new_user_path %> or
+      <%= link_to "Login", :login %></p>
     <% end %>
   </div>
   <div>
