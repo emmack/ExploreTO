@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get 'download' => 'favourites#download', :as => :download
   get 'home' => 'users#home', :as => :home
-
   
   # resources :user_sessions
   # resources :password_resets
