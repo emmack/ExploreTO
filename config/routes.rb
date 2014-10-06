@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :users
   resources :password_resets, only: [:create, :edit, :update]
+  resources :maps
 
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
+  get 'home' => 'users#home', :as => :home
   
   # resources :user_sessions
   # resources :password_resets
