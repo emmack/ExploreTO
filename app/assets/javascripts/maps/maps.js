@@ -48,6 +48,15 @@ var immigrantLayer = L.geoJson(torontoData,  {
       onEachFeature: onEachFeatureDensity
   })
 
+  var unemploymentLayer = L.geoJson(torontoData,  {
+      style: getStyleUnemployment,
+      onEachFeature: onEachFeatureUnemployment
+  })
+
+    var carLayer = L.geoJson(torontoData,  {
+      style: getStyleCar,
+      onEachFeature: onEachFeatureCar
+  })
 
 //used for all variables 
 
@@ -538,6 +547,128 @@ infoDensity.update = function (props) {
         '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.density + '%'
         : 'Hover over a census tract');
 };
+
+
+//unemployment
+  function getStyleUnemployment(feature) {
+      return {
+        fillColor: getColorUnemployment(feature.properties.unemployment),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+      };
+  }
+function getColorUnemployment(d) {
+    return  d > 30 ? '#f2f0f7':
+  d > 25 ? '#dadaeb':
+   d > 20 ? '#bcbddc':
+    d > 15 ? '#9e9ac8':
+     d > 10 ? '#807dba':
+     d > 5 ? '#6a51a3':
+              '#4a1486';
+            }
+  function highlightFeatureUnemployment(e) {
+    var layer = e.target;
+    infoUnemployment.update(layer.feature.properties);
+
+    layer.setStyle({
+        weight: 1,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+}
+function resetHighlightUnemployment(e) {
+   unemploymentLayer.resetStyle(e.target);
+    infoUnemployment.update();
+}
+function onEachFeatureUnemployment(feature, layer) {
+    layer.on({
+        mouseover: highlightFeatureUnemployment,
+        mouseout: resetHighlightUnemployment,
+        click: zoomToFeature
+    });
+}
+var infoUnemployment = L.control();
+
+infoUnemployment.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+infoUnemployment.update = function (props) {
+    this._div.innerHTML = '<h4>Unemployment Rate(%)</h4>' +  (props ?
+        '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.unemployment + '% Unemployment'
+        : 'Hover over a census tract');
+};
+
+//car
+  function getStyleCar(feature) {
+      return {
+        fillColor: getColorCar(feature.properties.car),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        fillOpacity: 0.7
+      };
+  }
+function getColorCar(d) {
+    return  d > 120 ? '#f2f0f7':
+  d > 100 ? '#dadaeb':
+   d > 80 ? '#bcbddc':
+    d > 60 ? '#9e9ac8':
+     d > 40 ? '#807dba':
+     d > 20 ? '#6a51a3':
+              '#4a1486';
+            }
+  function highlightFeatureCar(e) {
+    var layer = e.target;
+    infoCar.update(layer.feature.properties);
+
+    layer.setStyle({
+        weight: 1,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+}
+function resetHighlightCar(e) {
+   carLayer.resetStyle(e.target);
+    infoCar.update();
+}
+function onEachFeatureCar(feature, layer) {
+    layer.on({
+        mouseover: highlightFeatureCar,
+        mouseout: resetHighlightCar,
+        click: zoomToFeature
+    });
+}
+var infoCar = L.control();
+
+infoCar.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+infoCar.update = function (props) {
+    this._div.innerHTML = '<h4>Car as commute transportation (%)</h4>' +  (props ?
+        '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.car + '% car'
+        : 'Hover over a census tract');
+};
+
 var info;
 //menu
   var ui = document.getElementById('layerControls');
@@ -547,9 +678,11 @@ var info;
   addLayer(noeduLayer, 'No Education Certificate', 3, infoNoedu);
   addLayer(highschoolLayer, 'Highschool Certificate', 4, infoHighschool);
   addLayer(universityLayer, 'University Degree', 5, infoUniversity);
-    addLayer(populationLayer, 'Total Population', 6, infoPopulation);
-      addLayer(popchangeLayer, 'Population Change', 7, infoPopchange);
-       addLayer(densityLayer, 'Population Density', 7, infoDensity);
+  addLayer(populationLayer, 'Total Population', 6, infoPopulation);
+  addLayer(popchangeLayer, 'Population Change', 7, infoPopchange);
+  addLayer(densityLayer, 'Population Density', 8, infoDensity);
+  addLayer(unemploymentLayer, 'Percent Unemployment', 9, infoUnemployment);
+    addLayer(carLayer, 'Car Transportation', 10, infoCar);
 
 function addLayer(layer, name, zIndex, info) {
   layer.setZIndex(zIndex);
