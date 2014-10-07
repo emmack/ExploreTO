@@ -1,7 +1,7 @@
 $(document).on('ready page:load', function () {
-$(window).load(function() {
-  $(".loader").fadeOut("slow");
-});
+  $(window).load(function() {
+    $(".loader").fadeOut("slow");
+  });
 //initializing map 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoidTVwZDdCOCJ9.NKe9dqQ5Mitv2QYu9-dLJA';
 var map = L.mapbox.map('map', 'eckotzer.4a2f194e')
@@ -718,6 +718,7 @@ function doImage(err, canvas) {
     snapshot.innerHTML = '';
     snapshot.appendChild(img);
 };
+
 
 });
 
