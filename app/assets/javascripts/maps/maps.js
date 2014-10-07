@@ -1,5 +1,7 @@
 $(document).on('ready page:load', function () {
-
+$(window).load(function() {
+  $(".loader").fadeOut("slow");
+});
 //initializing map 
 L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoidTVwZDdCOCJ9.NKe9dqQ5Mitv2QYu9-dLJA';
 var map = L.mapbox.map('map', 'eckotzer.4a2f194e')
@@ -671,41 +673,36 @@ infoCar.update = function (props) {
 
 var info;
 //menu
-  var ui = document.getElementById('layerControls');
-  console.log(immigrantLayer)
-  addLayer(visminLayer, 'Visible Minority Population', 1, infoVismin);
-  addLayer(immigrantLayer, 'Immigrant Population', 2, infoImmigrant);
-  addLayer(noeduLayer, 'No Education Certificate', 3, infoNoedu);
-  addLayer(highschoolLayer, 'Highschool Certificate', 4, infoHighschool);
-  addLayer(universityLayer, 'University Degree', 5, infoUniversity);
-  addLayer(populationLayer, 'Total Population', 6, infoPopulation);
-  addLayer(popchangeLayer, 'Population Change', 7, infoPopchange);
-  addLayer(densityLayer, 'Population Density', 8, infoDensity);
-  addLayer(unemploymentLayer, 'Percent Unemployment', 9, infoUnemployment);
-    addLayer(carLayer, 'Car Transportation', 10, infoCar);
+  addLayer(populationLayer, 'pop', 1, infoPopulation);
+  addLayer(popchangeLayer, 'change', 2, infoPopchange);
+  addLayer(densityLayer, 'density', 3, infoDensity);
+  addLayer(immigrantLayer, 'immigrant', 4, infoImmigrant);
+  addLayer(visminLayer, 'vismin', 5, infoVismin);
+  
+  addLayer(noeduLayer, 'nocert', 6, infoNoedu);
+  addLayer(highschoolLayer, 'highschool', 7, infoHighschool);
+  addLayer(universityLayer, 'university', 8, infoUniversity);
+  addLayer(carLayer, 'car', 9, infoCar);
+  addLayer(unemploymentLayer, 'unemployment', 10, infoUnemployment);
+  
 
 function addLayer(layer, name, zIndex, info) {
   layer.setZIndex(zIndex);
  
-  var link = document.createElement('a');
-  link.href = '#';
-  link.className = 'btn btn-primary btn-sm';
-  link.type = 'button';
-  link.innerHTML = name;
-  link.onclick = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (map.hasLayer(layer)) {
-      map.removeLayer(layer);
-      info.removeFrom(map)
-      this.className = 'btn btn-primary btn-sm';
-    } else {
+  var input = document.getElementById(name);
+  console.log(input)
+    input.onchange = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+     if(this.checked) {
       map.addLayer(layer);
       info.addTo(map)
-      this.className = 'active btn btn-primary btn-sm';
-    }
-  };
-  ui.appendChild(link);
+      
+    } else {
+      map.removeLayer(layer);
+      info.removeFrom(map)
+    };
+     };
 };
 
 document.getElementById('snap').addEventListener('click', function() {
@@ -720,7 +717,7 @@ function doImage(err, canvas) {
     img.src = canvas.toDataURL();
     snapshot.innerHTML = '';
     snapshot.appendChild(img);
-}
+};
 
 });
 
