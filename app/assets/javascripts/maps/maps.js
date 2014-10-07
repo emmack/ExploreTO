@@ -691,24 +691,18 @@ function addLayer(layer, name, zIndex, info) {
  
   var input = document.getElementById(name);
   console.log(input)
-  // link.href = '#';
-  input.className = 'checkbox';
-  // input.type = 'checkbox';
-  // link.innerHTML = name;
-  input.onclick = function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (map.hasLayer(layer)) {
-      map.removeLayer(layer);
-      info.removeFrom(map)
-      this.className = 'checkbox';
-    } else {
+    input.onchange = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+     if(this.checked) {
       map.addLayer(layer);
       info.addTo(map)
-      this.className = 'checkboxed';
-    }
-  };
-
+      
+    } else {
+      map.removeLayer(layer);
+      info.removeFrom(map)
+    };
+     };
 };
 
 document.getElementById('snap').addEventListener('click', function() {
@@ -723,7 +717,7 @@ function doImage(err, canvas) {
     img.src = canvas.toDataURL();
     snapshot.innerHTML = '';
     snapshot.appendChild(img);
-}
+};
 
 });
 
