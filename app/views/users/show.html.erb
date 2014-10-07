@@ -1,2 +1,4 @@
 <h1><%= @user.name %></h1>
-<%= @user.email %>
+<p><%= @user.email %></p>
+
+<p><%= link_to "Show my favourite maps", user_favourites_path(@user) %></p>

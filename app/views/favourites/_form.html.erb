@@ -1,0 +1,8 @@
+<%= form_tag(user_favourite_path, method: :put) do |f| %>
+  <div class="field">
+    <%= form_tag "Tag list" %>&nbsp;&nbsp;&nbsp;&nbsp;<em>Use commas to separate tags</em><br>
+    <%= text_field_tag :tag_list %>
+  </div>
+
+  <div class="actions"><%= submit_tag "Submit" %></div>
+<% end %>
