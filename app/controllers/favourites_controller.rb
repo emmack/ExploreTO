@@ -33,7 +33,7 @@ class FavouritesController < ApplicationController
   def update
     @favourite = Favourite.find(params[:id])
     if @favourite.tag_list.add(params[:tag_list], parse: true)
-      redirect_to user_favourite_path[current_user.id, @favourite.id]
+      redirect_to user_favourites_path(current_user.id)
     else 
       render :edit, alert: "Something went wrong!"
     end

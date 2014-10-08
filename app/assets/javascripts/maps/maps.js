@@ -622,7 +622,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoDensity.update = function(props) {
     this._div.innerHTML = '<h4>Total population density</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.density + ' per square km' : 'No data available for this area');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.density + ' per square kilometre' : 'No data available for this area');
   };
 
 

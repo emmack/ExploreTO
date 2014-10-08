@@ -4,7 +4,10 @@
   <% @favourites.each do |favourite| %>
     <h3><%= favourite.data_set.name %></h3>
     <p><%= link_to "Add tags to project", edit_user_favourite_url(current_user.id, favourite.id) %></p>
-    <p><%= "Downloaded" if favourite.downloaded %><%= button_to (favourite.downloaded ? "Download raw map data again" : "Download raw map data"), download_path, method: :get, params: { favourite: favourite.id, data_set: favourite.data_set.id } %></p>
+    <p><h5><%= "Downloaded" if favourite.downloaded %></h5>
+    <%= button_to "Download map data (#{favourite.data_set.format})", download_path, method: :get, params: { favourite: favourite.id, data_set: favourite.data_set.id } %>
+      
+    </p>
   <% end %>
 <% else %>
   <p>No favourites yet.</p>
