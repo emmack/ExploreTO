@@ -33,10 +33,13 @@ gem 'bourbon'
 gem 'bitters'
 gem 'neat'
 
-gem 'pry'
+gem 'pry', group: :development
+
 gem 'acts-as-taggable-on', '~>3.4'
 gem 'delayed_job_active_record'
 gem 'htmlbeautifier', '~> 0.0.10'
+gem 'quiet_assets', group: :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
