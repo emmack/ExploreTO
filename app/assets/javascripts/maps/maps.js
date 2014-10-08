@@ -133,12 +133,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorVismin(d) {
-    return d > 100 ? '#E31A1C' :
-      d > 80 ? '#FC4E2A' :
-      d > 60 ? '#FD8D3C' :
-      d > 40 ? '#FEB24C' :
-      d > 20 ? '#FED976' :
-      '#FFEDA0';
+    return d > 90 ? '#4a1486' :
+      d > 75 ? '#6a51a3' :
+      d > 60 ? '#807dba' :
+      d > 45 ? '#9e9ac8' :
+      d > 30 ? '#bcbddc' :
+      d > 15 ? '#dadaeb' :
+      '#f2f0f7';
   }
 
   function highlightFeatureVismin(e) {
@@ -177,8 +178,8 @@ $(document).on('ready page:load', function() {
   };
 
   infoVismin.update = function(props) {
-    this._div.innerHTML = '<h4>Percent vismin Population</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.vismin + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent visible minorities in population</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.vismin + ' %' : 'No data available for this area');
   };
   console.log(infoVismin)
 
@@ -195,12 +196,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorImmigrant(d) {
-    return d > 100 ? '#edf8e9' :
-      d > 80 ? '#c7e9c0' :
-      d > 60 ? '#a1d99b' :
-      d > 40 ? '#74c476' :
-      d > 20 ? '#31a354' :
-      '#006d2c';
+    return d > 90 ? '#99000d' :
+      d > 75 ? '#cb181d' :
+      d > 60 ? '#ef3b2c' :
+      d > 45 ? '#fb6a4a' :
+      d > 30 ? '#fc9272' :
+      d > 15 ? '#fcbba1' :
+      '#fee5d9';
   }
 
   function highlightFeatureImmigrant(e) {
@@ -240,7 +242,7 @@ $(document).on('ready page:load', function() {
 
   infoImmigrant.update = function(props) {
     this._div.innerHTML = '<h4>Percent Immigrant Population</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.vismin + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.vismin + ' %' : 'No data available for this area');
   };
 
   //no education
@@ -255,13 +257,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorNoedu(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 30 ? '#084594' :
+      d > 25 ? '#2171b5' :
+      d > 20 ? '#4292c6' :
+      d > 15 ? '#6baed6' :
+      d > 10 ? '#9ecae1' :
+      d > 5 ? '#c6dbef' :
+      '#eff3ff';
   }
 
   function highlightFeatureNoedu(e) {
@@ -302,8 +304,8 @@ $(document).on('ready page:load', function() {
 
   // method that we will use to update the control based on feature properties passed
   infoNoedu.update = function(props) {
-    this._div.innerHTML = '<h4>Percent no education certificate</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.nocert + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent of population with no education certificate</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.nocert + ' %' : 'No data available for this area');
   };
 
   //highschool
@@ -318,13 +320,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorHighschool(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 30 ? '#005a32' :
+      d > 25 ? '#238b45' :
+      d > 20 ? '#41ab5d' :
+      d > 15 ? '#74c476' :
+      d > 10 ? '#a1d99b' :
+      d > 5 ? '#c7e9c0' :
+      '#edf8e9';
   }
 
   function highlightFeatureHighschool(e) {
@@ -365,8 +367,8 @@ $(document).on('ready page:load', function() {
 
   // method that we will use to update the control based on feature properties passed
   infoHighschool.update = function(props) {
-    this._div.innerHTML = '<h4>Percent highschool certificate</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.highschool + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent with only high school certificate</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.highschool + ' %' : 'No data available for this area');
   };
 
   //university
@@ -381,13 +383,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorUniversity(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#8c2d04' :
+      d > 75 ? '#cc4c02' :
+      d > 60 ? '#ec7014' :
+      d > 45 ? '#fe9929' :
+      d > 30 ? '#fec44f' :
+      d > 15 ? '#fee391' :
+      '#ffffd4';
   }
 
   function highlightFeatureUniversity(e) {
@@ -428,8 +430,8 @@ $(document).on('ready page:load', function() {
 
   // method that we will use to update the control based on feature properties passed
   infoUniversity.update = function(props) {
-    this._div.innerHTML = '<h4>Percent Post Secondary Degree</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.university + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent with at least one post-secondary diploma</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.university + ' %' : 'No data available for this area');
   };
 
 
@@ -445,13 +447,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorPopulation(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 22461 ? '#084594' :
+      d > 18739 ? '#2171b5' :
+      d > 15017 ? '#4292c6' :
+      d > 11296 ? '#6baed6' :
+      d > 7574 ? '#9ecae1' :
+      d > 3852 ? '#c6dbef' :
+      '#eff3ff';
   }
 
   function highlightFeaturePopulation(e) {
@@ -493,7 +495,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoPopulation.update = function(props) {
     this._div.innerHTML = '<h4>Total Population</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.population + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.population + ' people' : 'No data available for this area');
   };
 
 
@@ -509,13 +511,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorPopchange(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 100 ? '#005a32' :
+      d > 25 ? '#238b45' :
+      d > 10 ? '#41ab5d' :
+      d > 5 ? '#74c476' :
+      d > 0 ? '#a1d99b' :
+      d > -10 ? '#c7e9c0' :
+      '#edf8e9';
   }
 
   function highlightFeaturePopchange(e) {
@@ -557,7 +559,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoPopchange.update = function(props) {
     this._div.innerHTML = '<h4>Total population change (2006-2011)</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.popChange + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.popChange + ' %' : 'No data available for this area');
   };
 
   //density
@@ -572,13 +574,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorDensity(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 40000 ? '#f8c2d04' :
+      d > 20000 ? '#cc4c02' :
+      d > 10000 ? '#ec7014' :
+      d > 1000 ? '#fe9929' :
+      d > 500 ? '#fec44f' :
+      d > 100 ? '#fee391' :
+      '#ffffd4';
   }
 
   function highlightFeatureDensity(e) {
@@ -620,7 +622,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoDensity.update = function(props) {
     this._div.innerHTML = '<h4>Total population density</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.density + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.density + ' per square km' : 'No data available for this area');
   };
 
 
@@ -636,13 +638,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorUnemployment(d) {
-    return d > 30 ? '#f2f0f7' :
-      d > 25 ? '#dadaeb' :
-      d > 20 ? '#bcbddc' :
-      d > 15 ? '#9e9ac8' :
-      d > 10 ? '#807dba' :
-      d > 5 ? '#6a51a3' :
-      '#4a1486';
+    return d > 30 ? '#084594' :
+      d > 25 ? '#2171b5' :
+      d > 20 ? '#4292c6' :
+      d > 15 ? '#6baed6' :
+      d > 10 ? '#9ecae1' :
+      d > 5 ? '#c6dbef' :
+      '#eff3ff';
   }
 
   function highlightFeatureUnemployment(e) {
@@ -683,8 +685,8 @@ $(document).on('ready page:load', function() {
 
   // method that we will use to update the control based on feature properties passed
   infoUnemployment.update = function(props) {
-    this._div.innerHTML = '<h4>Unemployment Rate(%)</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.unemployment + '% Unemployment' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Unemployment rate</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.unemployment + ' %' : 'No data available for this area');
   };
 
   //car
@@ -699,13 +701,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorCar(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#084594' :
+      d > 75 ? '#2171b5' :
+      d > 60 ? '#4292c6' :
+      d > 45 ? '#6baed6' :
+      d > 30 ? '#9ecae1' :
+      d > 15 ? '#c6dbef' :
+      '#eff3ff';
   }
 
   function highlightFeatureCar(e) {
@@ -745,8 +747,8 @@ $(document).on('ready page:load', function() {
   };
 
   infoCar.update = function(props) {
-    this._div.innerHTML = '<h4>Car as commute transportation (%)</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.car + '% ' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent who use car as commute transportation</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.car + ' %' : 'No data available for this area');
   };
   //car
   function getStylePt(feature) {
@@ -760,13 +762,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorPt(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#005a32' :
+      d > 75 ? '#238b45' :
+      d > 60 ? '#41ab5d' :
+      d > 45 ? '#74c476' :
+      d > 30 ? '#a1d99b' :
+      d > 15 ? '#c7e9c0' :
+      '#edf8e9';
   }
 
   function highlightFeaturePt(e) {
@@ -806,8 +808,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoPt.update = function(props) {
-    this._div.innerHTML = '<h4>Public transit as commute transportation (%)</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.publictrans + '% ' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent who use public transit as commute transportation</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.publictrans + ' %' : 'No data available for this area');
   };
 
   //car
@@ -822,13 +824,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorWalk(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#8c2d04' :
+      d > 75 ? '#cc4c02' :
+      d > 60 ? '#ec7014' :
+      d > 45 ? '#fe9929' :
+      d > 30 ? '#fec44f' :
+      d > 15 ? '#fee391' :
+      '#ffffd4';
   }
 
   function highlightFeatureWalk(e) {
@@ -868,8 +870,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoWalk.update = function(props) {
-    this._div.innerHTML = '<h4>Walking as commute transportation (%)</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.walk + '% ' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent who use walking as commute transportation</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.walk + ' %' : 'No data available for this area');
   };
 
   //car
@@ -884,13 +886,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorMedcommute(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 40 ? '#99000d' :
+      d > 35 ? '#cb181d' :
+      d > 30 ? '#ef3b2c' :
+      d > 25 ? '#fb6a4a' :
+      d > 20 ? '#fc9272' :
+      d > 15 ? '#fcbba1' :
+      '#fee5d9';
   }
 
   function highlightFeatureMedcommute(e) {
@@ -931,7 +933,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoMedcommute.update = function(props) {
     this._div.innerHTML = '<h4>Median commute time</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medcommute + ' minutes' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medcommute + ' minutes' : 'No data available for this area');
   };
 
 
@@ -947,13 +949,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorHomeown(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#084594' :
+      d > 75 ? '#2171b5' :
+      d > 60 ? '#4292c6' :
+      d > 45 ? '#6baed6' :
+      d > 30 ? '#9ecae1' :
+      d > 15 ? '#c6dbef' :
+      '#eff3ff';
   }
 
   function highlightFeatureHomeown(e) {
@@ -994,7 +996,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoHomeown.update = function(props) {
     this._div.innerHTML = '<h4>Percent home ownership</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.homeOwn + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.homeOwn + ' %' : 'No data available for this area');
   };
 
 
@@ -1011,13 +1013,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorHomerent(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#005a32' :
+      d > 75 ? '#238b45' :
+      d > 60 ? '#41ab5d' :
+      d > 45 ? '#74c476' :
+      d > 30 ? '#a1d99b' :
+      d > 15 ? '#c7e9c0' :
+      '#edf8e9';
   }
 
   function highlightFeatureHomerent(e) {
@@ -1057,8 +1059,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoHomerent.update = function(props) {
-    this._div.innerHTML = '<h4>Percent home rentals</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.homeRent + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent home rental</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.homeRent + ' %' : 'No data available for this area');
   };
 
 
@@ -1074,13 +1076,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorMedown(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 2450 ? '#4a1486' :
+      d > 2050 ? '#6a51a3' :
+      d > 1650 ? '#807dba' :
+      d > 1250 ? '#9e9ac8' :
+      d > 850 ? '#bcbddc' :
+      d > 450 ? '#dadaeb' :
+      '#f2f0f7';
   }
 
   function highlightFeatureMedown(e) {
@@ -1121,7 +1123,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoMedown.update = function(props) {
     this._div.innerHTML = '<h4>Median home mortgage price</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medOwnPay + 'dollars' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medOwnPay + ' dollars' : 'No data available for this area');
   };
 
   //car
@@ -1136,13 +1138,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorMedrent(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 2450 ? '#99000d' :
+      d > 2050 ? '#cb181d' :
+      d > 1650 ? '#ef3b2c' :
+      d > 1250 ? '#fb6a4a' :
+      d > 850 ? '#fc9272' :
+      d > 450 ? '#fcbba1' :
+      '#fee5d9';
   }
 
   function highlightFeatureMedrent(e) {
@@ -1184,8 +1186,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoMedrent.update = function(props) {
-    this._div.innerHTML = '<h4>Median home rental payments</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medRentPay + ' dollars' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Median home rental payment</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medRentPay + ' dollars' : 'No data available for this area');
   };
 
   //car
@@ -1200,13 +1202,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorOver30(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#8c2d04' :
+      d > 75 ? '#cc4c02' :
+      d > 60 ? '#ec7014' :
+      d > 45 ? '#fe9929' :
+      d > 30 ? '#fec44f' :
+      d > 15 ? '#fee391' :
+      '#ffffd4';
   }
 
   function highlightFeatureOver30(e) {
@@ -1248,8 +1250,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoOver30.update = function(props) {
-    this._div.innerHTML = '<h4>Percent paying over 30% of income on housing</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.over30 + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent spending over 30% of income on housing</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.over30 + ' %' : 'No data available for this area');
   };
 
   //car
@@ -1264,13 +1266,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorUnder30(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#99000d' :
+      d > 75 ? '#cb181d' :
+      d > 60 ? '#ef3b2c' :
+      d > 45 ? '#fb6a4a' :
+      d > 30 ? '#fc9272' :
+      d > 15 ? '#fcbba1' :
+      '#fee5d9';
   }
 
   function highlightFeatureUnder30(e) {
@@ -1313,7 +1315,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoUnder30.update = function(props) {
     this._div.innerHTML = '<h4>Percent paying under 30% of income on housing</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.under30 + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.under30 + ' %' : 'No data available for this area');
   };
 
   //car
@@ -1328,13 +1330,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorTopincome(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#99000d' :
+      d > 75 ? '#cb181d' :
+      d > 60 ? '#ef3b2c' :
+      d > 45 ? '#fb6a4a' :
+      d > 30 ? '#fc9272' :
+      d > 15 ? '#fcbba1' :
+      '#fee5d9';
   }
 
   function highlightFeatureTopincome(e) {
@@ -1377,7 +1379,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoTopincome.update = function(props) {
     this._div.innerHTML = '<h4>Percent in top 50% of incomes</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.topIncome + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.topIncome + ' %' : 'No data available for this area');
   };
 
 
@@ -1393,13 +1395,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorBottomincome(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 90 ? '#4a1486' :
+      d > 75 ? '#6a51a3' :
+      d > 60 ? '#807dba' :
+      d > 45 ? '#9e9ac8' :
+      d > 30 ? '#bcbddc' :
+      d > 15 ? '#dadaeb' :
+      '#f2f0f7';
   }
 
   function highlightFeatureBottomincome(e) {
@@ -1442,7 +1444,7 @@ $(document).on('ready page:load', function() {
   // method that we will use to update the control based on feature properties passed
   infoBottomincome.update = function(props) {
     this._div.innerHTML = '<h4>Percent in bottom 50% of incomes</h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.bottomIncome + '%' : 'Hover over a census tract');
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.bottomIncome + ' %' : 'No data available for this area');
   };
 
 
@@ -1458,13 +1460,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorLowincome(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 50 ? '#8c2d04' :
+      d > 35 ? '#cc4c02' :
+      d > 25 ? '#ec7014' :
+      d > 15 ? '#fe9929' :
+      d > 10 ? '#fec44f' :
+      d > 5 ? '#fee391' :
+      '#ffffd4';
   }
 
   function highlightFeatureLowincome(e) {
@@ -1506,8 +1508,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoLowincome.update = function(props) {
-    this._div.innerHTML = '<h4>Percent with low income </h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.lowIncome + '%' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Percent with low income (based on after-tax low income measures)</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.lowIncome + ' %' : 'No data available for this area');
   };
 
   //car
@@ -1522,13 +1524,13 @@ $(document).on('ready page:load', function() {
   }
 
   function getColorMedincome(d) {
-    return d > 120 ? '#f2f0f7' :
-      d > 100 ? '#dadaeb' :
-      d > 80 ? '#bcbddc' :
-      d > 60 ? '#9e9ac8' :
-      d > 40 ? '#807dba' :
-      d > 20 ? '#6a51a3' :
-      '#4a1486';
+    return d > 200000 ? '#005a32' :
+      d > 150000 ? '#238b45' :
+      d > 100000 ? '#41ab5d' :
+      d > 75000 ? '#74c476' :
+      d > 50000 ? '#a1d99b' :
+      d > 19000 ? '#c7e9c0' :
+      '#edf8e9';
   }
 
   function highlightFeatureMedincome(e) {
@@ -1570,8 +1572,8 @@ $(document).on('ready page:load', function() {
   };
   // method that we will use to update the control based on feature properties passed
   infoMedincome.update = function(props) {
-    this._div.innerHTML = '<h4>Median income  </h4>' + (props ?
-      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medIncome + ' dollars' : 'Hover over a census tract');
+    this._div.innerHTML = '<h4>Median income</h4>' + (props ?
+      '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medIncome + ' dollars' : 'No data available for this area');
   };
 
   var info;
