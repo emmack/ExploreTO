@@ -35,7 +35,7 @@ gem 'neat'
 
 gem 'pry'
 gem 'acts-as-taggable-on', '~>3.4'
-
+gem 'delayed_job_active_record'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,4 +47,3 @@ gem 'acts-as-taggable-on', '~>3.4'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

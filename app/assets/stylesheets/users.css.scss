@@ -12,7 +12,7 @@
   $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6);
   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2);
   $accordion-menu-list-padding: $base-spacing/2 $gutter;
-  
+
   background-color: $accordion-menu-background;
   border: $accordion-menu-border;
   margin-bottom: $base-spacing;
@@ -24,17 +24,17 @@
       color: $accordion-menu-color;
       padding: $accordion-menu-list-padding;
       display: block;
-    }
 
+    }
     &:last-child {
       border: none;
-    }
 
+    }
     &:hover {
       background-color: $accordion-menu-hover;
     }
-  }
 
+  }
   ul.submenu {
     display: none;
 
@@ -44,29 +44,28 @@
       &:first-child {
         border-top: $accordion-menu-border;
         box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;
-      }
 
+      }
       &:hover {
         background-color: $accordion-menu-sub-hover;
       }
     }
-  }
 
+  }
   .is-expanded {
     display: block;
     padding-bottom: 0;
   }
+
 }
-
-
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
-}
 
+}
 .grid-items-lines {
   $grid-items-background: $base-background-color;
   $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, .8); 
+  $grid-item-border: 1px solid transparentize($base-font-color, .8);
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
   $grid-item-color: $base-font-color;
@@ -74,13 +73,13 @@
 
   @include clearfix;
   position: relative;
-    
+
   .grid-item {
     @include transition (all 0.2s ease-in-out);
     height: $grid-item-height;
     background: $grid-item-background;
     width: 100%;
-    height:100%;
+    height: 100%;
     overflow: hidden;
     float: right;
     padding: 2em;
@@ -90,33 +89,33 @@
 
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
-    }
 
+    }
     &:hover {
       background: transparentize($grid-item-color, .95);
     }
+
   }
-
   .grid-item img {
-      display: block;
-      height: 2.5em;
-      margin-bottom: 1.2em;
-      opacity: .2;
-    }
+    display: block;
+    height: 2.5em;
+    margin-bottom: 1.2em;
+    opacity: 0.2;
 
+  }
   .grid-item h1 {
-      color: $grid-item-color;
-      font-size: 1.3em;
-      margin-bottom: .4em;
-    }
+    color: $grid-item-color;
+    font-size: 1.3em;
+    margin-bottom: 0.4em;
 
+  }
   .grid-item p {
-      color: transparentize($grid-item-color, .4);
-      @include media($medium-screen) {
-        max-width: 70%;
-      }
+    color: transparentize($grid-item-color, .4);
+    @include media($medium-screen) {
+      max-width: 70%;
     }
 
+  }
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
@@ -124,85 +123,90 @@
     p {
       @include media($medium-screen) {
         max-width: 60%;
-      }  
+      }
     }
-  }
 
-  
-// this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+  }
+  // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
   .bottom-cover {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 3px;
     background: $grid-items-background;
-  }
 
+  }
   .right-cover {
     position: absolute;
-    right: 0px;
+    right: 0;
     height: 100%;
     width: 4px;
     background: $grid-items-background;
   }
-}
 
+}
 .wrapper {
-@include outer-container;
-.primary { @include span-columns(3); }
-.secondary { @include span-columns(6); }
-.third { @include span-columns(3); }
-}
+  @include outer-container;
+  .primary {
+    @include span-columns(3);
+  }
+  .secondary {
+    @include span-columns(6);
+  }
+  .third {
+    @include span-columns(3);
+  }
 
+}
 .loader {
   position: fixed;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url('images/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
-}
+  background: url("images/page-loader.gif") 50% 50% no-repeat rgb(249,249,249);
 
-#logo{
-  h2{
+}
+#logo {
+  h2 {
     font-family: 'hipster script pro';
-        color:#133d71;
-        font-size: 40px;
-        padding-top:15px;
-        padding-left:15px;
+    color: #133d71;
+    font-size: 40px;
+    padding-top: 15px;
+    padding-left: 15px;
   }
-}
-#nav{
-  p{
-    font-family: 'campton';
-     padding-top:15px;
-    padding-left:15px;
-  }
-}
 
+}
+#nav {
+  p {
+    font-family: 'campton';
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+
+}
 .hero {
-  $hero-background-top: darken($base-accent-color, 25); 
+  $hero-background-top: darken($base-accent-color, 25);
   $hero-background-bottom: adjust-hue($hero-background-top, -70);
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: 'https:
-//raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
+  $hero-image: 'https: //raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
 
   @include background(url("/assets/toronto2.png"));
 
   background-repeat: no-repeat;
   background-position: top;
-  background-size:100%; 
- 
+  background-size: 100%;
+
   padding-bottom: 4em;
   padding-top: 7em;
-height: 876px;
+  height: 876px;
   .hero-logo img {
     height: 3em;
     margin-bottom: 2.5em;
-  }
 
+  }
   .hero-inner {
     @include outer-container;
     @include clearfix;
@@ -215,90 +219,81 @@ height: 876px;
       @include button(simple, $base-background-color);
       font-size: $base-font-size;
       outline: none;
-    }
 
+    }
     .hero-copy {
       text-align: center;
-      
+
       h1 {
-        font-size:150px;
-        margin-bottom: .5em;
+        font-size: 150px;
+        margin-bottom: 0.5em;
         font-family: 'hipster script pro';
-        color:#133d71;
-        margin-bottom: 0px;
-padding-left: 115px;
-
-
+        color: #133d71;
+        margin-bottom: 0;
+        padding-left: 115px;
 
         @include media($large-screen) {
           // font-size: 1.8em;
         }
+
       }
-        h2{
-        font-size:40px;
-        margin-bottom: .5em;
+      h2 {
+        font-size: 40px;
+        margin-bottom: 0.5em;
         font-family: 'hipster script pro';
-        color:#133d71;
-        margin-bottom: 0px;
+        color: #133d71;
+        margin-bottom: 0;
 
-}
-
+      }
       p {
         font-family: 'campton';
-        margin: auto;
-        margin-bottom: 3em; 
+        margin: auto auto 3em;
         font-weight: 300;
         line-height: 1.4em;
-        color:#5e9ca0;
-
+        color: #5e9ca0;
         @include media($large-screen) {
-       font-size: 2.1em;
-max-width: 100%;
+          font-size: 2.1em;
+          max-width: 100%;
         }
       }
     }
   }
+
 }
-
-
 .ui-button {
-  z-index:1000;
-  }
+  z-index: 1000;
 
-
+}
 #map {
-  width:100%;
-  height:800px;
-  }
+  width: 100%;
+  height: 800px;
 
+}
 #snapshot {
-  width:100%;
-  }
+  width: 100%;
 
-
-
-.home{
+}
+.home {
   font-family: 'bebas';
   text-align: center;
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   // margin: auto;
   margin-top: auto;
   margin-bottom: auto;
 
-  h1{
+  h1 {
     font-size: 50px;
   }
-  p{
-  font-size: 15px;
+  p {
+    font-size: 15px;
   }
+
 }
-
-
 .label-switch {
-  $switch-width: 52px;
+  $switch-width: 35px;
   $switch-padding: 2px;
-  $switch-height: 32px;
+  $switch-height: 20px;
   $switch-radius: $switch-height;
   $knob-height: $switch-height - ($switch-padding * 2);
   $knob-width: $knob-height;
@@ -307,125 +302,116 @@ max-width: 100%;
   align-self: center;
   border-radius: $switch-radius;
   cursor: pointer;
-  display: inline-block;
-  height: $switch-height;
+  display: inline-flex;
+  height: 30px;
   position: relative;
   vertical-align: middle;
-  width: $switch-width;
+  width: 200px;
   @include box-sizing(border-box);
 
   input[type="checkbox"] {
     display: none;
 
-  + .checkbox {
-    background: #e5e5e5;
-    border: none;
-    border-radius: $switch-radius;
-    cursor: pointer;
-    height: $switch-height;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    width: $switch-width;
-    z-index: 0;
-    @include box-sizing(border-box);
-    @include transition(all 0.3s ease);
-
-    &:before {
-      background: white;
+    + .checkbox {
+      background: #e5e5e5;
+      border: none;
       border-radius: $switch-radius;
-      content: ' ';
-      height: $knob-radius;
-      width: $switch-width - ($switch-padding * 2);
-      z-index: 1;
+      cursor: pointer;
+      height: $switch-height;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: $switch-width;
+      z-index: 0;
       @include box-sizing(border-box);
-      @include position(absolute, 2px 0 0 2px);
       @include transition(all 0.3s ease);
-      @include transform(scale(1));
-    }
 
-    &:after {
-      background: white;
-      border-radius: $knob-radius;
-      content: ' ';
-      height: $knob-height;
-      width: $knob-width;
-      z-index: 2;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-      @include position(absolute, 2px 0 0 2px);
-      @include transition(all 0.3s ease);
-    }
-  }
+      &:before {
+        background: white;
+        border-radius: $switch-radius;
+        content: ' ';
+        height: $knob-radius;
+        width: $switch-width - ($switch-padding * 2);
+        z-index: 1;
+        @include box-sizing(border-box);
+        @include position(absolute, 2px 0 0 2px);
+        @include transition(all 0.3s ease);
+        @include transform(scale(1));
 
-  &:checked {
-     +.checkbox {
-      background: $blue;
-        
+      }
+      &:after {
+        background: white;
+        border-radius: $knob-radius;
+        content: ' ';
+        height: $knob-height;
+        width: $knob-width;
+        z-index: 2;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        @include position(absolute, 2px 0 0 2px);
+        @include transition(all 0.3s ease);
+      }
+
+    }
+    &:checked {
+      +.checkbox {
+        background: $blue;
+
         &:before {
           @include transform(scale(0));
-        }
 
+        }
         &:after {
           left: $switch-width - $knob-width - ($switch-padding);
         }
       }
     }
   }
+
 }
-
-
-
 body {
   margin: 0;
   padding: 0;
   // background-image: url("/assets/toronto.png")
+
 }
-
-
-
-
-
-
 .info {
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
-  background: #FFF;
   background: rgba(255,255,255,0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-}
 
+}
 .info h4 {
   margin: 0 0 5px;
   color: #777;
-}
 
+}
 .tooltip {
-  opacity:1;
-}
+  opacity: 1;
 
+}
 .map-tooltip {
   min-height: 80px;
   min-width: 320px;
+
 }
+#canvas {
+  margin-left: 20px;
+  margin-right: 0;
+  margin-bottom: 20px;
+  border: thin solid #aaa;
+  cursor: crosshair;
+  padding: 0;
 
+}
+#controls {
+  margin: 20px 0 20px 20px;
 
- #canvas {
-            margin-left: 20px;
-            margin-right: 0;
-            margin-bottom: 20px;
-            border: thin solid #aaaaaa;
-            cursor: crosshair;
-            padding: 0;
-         }
-
-         #controls {
-            margin: 20px 0px 20px 20px;
-         }
-
-         #rubberbandDiv {
-            position: absolute;
-            border: 3px solid blue;
-            cursor: crosshair;
-            display: none;
-         }
+}
+#rubberbandDiv {
+  position: absolute;
+  border: 3px solid blue;
+  cursor: crosshair;
+  display: none;
+}
