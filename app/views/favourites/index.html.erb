@@ -1,14 +1,16 @@
 <h1>My Favourite Maps</h1>
 
-<% if @favourites %>
-  <% @favourites.each do |favourite| %>
-    <h3><%= favourite.data_set.name %></h3>
-    <p><%= link_to "Add tags to project", edit_user_favourite_url(current_user.id, favourite.id) %></p>
-    <p><h5><%= "Downloaded" if favourite.downloaded %></h5>
-    <%= button_to "Download map data (#{favourite.data_set.format})", download_path, method: :get, params: { favourite: favourite.id, data_set: favourite.data_set.id } %>
-      
-    </p>
-  <% end %>
-<% else %>
-  <p>No favourites yet.</p>
+<div>
+  <%= button_to "Download map data (.csv)", "/data_files/torontoCT2011.csv" %><br>
+  <%= button_to "Download map data (.csv)", "/data_files/torontoCT2011.geojson" %>
+</div>
+
+<div class="grid-item">
+  <div id="snapshot"></div>
+</div>
+
+<% if @favourite.tag_list %>
+  Tags:<br>
+  <em><%= @favourite.tag_list %></em><br>
+  <%= link_to "Edit tags", edit_user_favourite_url(current_user.id, @favourite.id) %>
 <% end %>
