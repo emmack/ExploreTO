@@ -940,7 +940,7 @@ $(document).on('ready page:load', function() {
   //car
   function getStyleHomeown(feature) {
     return {
-      fillColor: getColorHomeown(feature.properties.homeOwn),
+      fillColor: getColorHomeown(feature.properties.homeOwner),
       weight: 2,
       opacity: 1,
       color: 'white',
@@ -1004,7 +1004,7 @@ $(document).on('ready page:load', function() {
   //car
   function getStyleHomerent(feature) {
     return {
-      fillColor: getColorHomerent(feature.properties.homeRent),
+      fillColor: getColorHomerent(feature.properties.homeRenter),
       weight: 2,
       opacity: 1,
       color: 'white',
