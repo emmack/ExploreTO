@@ -975,7 +975,7 @@ $(document).on('ready page:load', function() {
   }
 
   function resetHighlightHomeown(e) {
-    homeOwnLayer.resetStyle(e.target);
+    homeOwnerLayer.resetStyle(e.target);
     infoHomeown.update();
   }
 
@@ -1039,7 +1039,7 @@ $(document).on('ready page:load', function() {
   }
 
   function resetHighlightHomerent(e) {
-    homeRentLayer.resetStyle(e.target);
+    homeRenterLayer.resetStyle(e.target);
     infoHomerent.update();
   }
 
