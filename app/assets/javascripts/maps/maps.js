@@ -753,7 +753,7 @@ $(document).on('ready page:load', function() {
   //car
   function getStylePt(feature) {
     return {
-      fillColor: getColorPt(feature.properties.car),
+      fillColor: getColorPt(feature.properties.publictrans),
       weight: 2,
       opacity: 1,
       color: 'white',
