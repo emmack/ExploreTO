@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root :to => 'users#home'
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :users do
     resources :favourites
@@ -17,7 +16,10 @@ Rails.application.routes.draw do
 
   get 'download' => 'favourites#download', :as => :download
   get 'home' => 'users#home', :as => :home
+  get 'about' => 'users#about' :as => :about
+  get 'contact' => 'user#contact' :as => :contact
   
+  root :to => 'users#home'
   # resources :user_sessions
   # resources :password_resets
 

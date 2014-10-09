@@ -4,7 +4,7 @@ $(document).on('ready page:load', function() {
   });
   //initializing map
   L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoidTVwZDdCOCJ9.NKe9dqQ5Mitv2QYu9-dLJA';
-  var map = L.mapbox.map('map', 'eckotzer.4a2f194e')
+  var map = L.mapbox.map('map', 'eckotzer.ee86ecce')
     .setView([43.6525, -79.381667], 10);
 
   //layers
@@ -114,6 +114,11 @@ $(document).on('ready page:load', function() {
   var medIncomeLayer = L.geoJson(torontoData, {
       style: getStyleMedincome,
       onEachFeature: onEachFeatureMedincome
+    })
+
+    var neighbourhoodsLayer = L.geoJson(neighbourhood, {
+      style: getStyleHood,
+      onEachFeature: onEachFeatureHood
     })
     //used for all variables
 
@@ -940,7 +945,7 @@ $(document).on('ready page:load', function() {
   //car
   function getStyleHomeown(feature) {
     return {
-      fillColor: getColorHomeown(feature.properties.homeOwner),
+      fillColor: getColorHomeown(feature.properties.homeOwn),
       weight: 2,
       opacity: 1,
       color: 'white',
@@ -1004,7 +1009,7 @@ $(document).on('ready page:load', function() {
   //car
   function getStyleHomerent(feature) {
     return {
-      fillColor: getColorHomerent(feature.properties.homeRenter),
+      fillColor: getColorHomerent(feature.properties.homeRent),
       weight: 2,
       opacity: 1,
       color: 'white',
@@ -1576,8 +1581,56 @@ $(document).on('ready page:load', function() {
       '<b>' + 'Cenus Tract ID: ' + props.CTUID + '</b><br />' + props.medIncome + ' dollars' : 'No data available for this area');
   };
 
+
+  //car
+  function getStyleHood(feature) {
+    return {
+      fillColor: 'white',
+      weight: 2,
+      opacity: 1,
+      color: 'black',
+      fillOpacity: 0.5
+    };
+  }
+  function getName(feature){
+    return feature.properties.AREA_NAME
+     console.log(feature.properties.AREA_NAME)
+  }
+
+  function highlightFeatureHood(e) {
+    var layer = e.target;
+    label = new L.Label()
+    console.log(label)
+    layer.setStyle({
+      label: getName, 
+
+      weight: 1,
+      color: '#666',
+      dashArray: '',
+      fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+      layer.bringToFront();
+    }
+  }
+
+  function resetHighlightHood(e) {
+    neighbourhoodsLayer.resetStyle(e.target);
+  }
+
+  function onEachFeatureHood(feature, layer) {
+    layer.on({
+      mouseover: highlightFeatureHood,
+      mouseout: resetHighlightHood,
+      click: zoomToFeature
+    });
+  }
+
+
   var info;
   //menu
+  addLayer(neighbourhoodsLayer, 'areaName', -1);
   addLayer(populationLayer, 'pop', 1, infoPopulation);
   addLayer(popchangeLayer, 'change', 2, infoPopchange);
   addLayer(densityLayer, 'density', 3, infoDensity);
@@ -1601,29 +1654,45 @@ $(document).on('ready page:load', function() {
   addLayer(topIncomeLayer, 'topincome', 21, infoTopincome);
   addLayer(bottomIncomeLayer, 'bottomincome', 22, infoBottomincome);
   addLayer(lowIncomeLayer, 'lowincome', 23, infoLowincome);
+  
 
   function addLayer(layer, name, zIndex, info) {
     layer.setZIndex(zIndex);
 
     var input = document.getElementById(name);
     console.log(input)
+    
     input.onchange = function(e) {
       e.preventDefault();
       e.stopPropagation();
       if (this.checked) {
         map.addLayer(layer);
-        info.addTo(map)
-
+        if(name != 'areaName'){
+          info.addTo(map)
+        };
       } else {
         map.removeLayer(layer);
+         if(name != 'areaName'){
         info.removeFrom(map)
+      };
       };
     };
   };
 
+ $('.after').hide();
+  $('.before').show();
+
   document.getElementById('snap').addEventListener('click', function() {
     leafletImage(map, doImage);
+    $('.before').toggle();
+     $('.after').toggle();
   });
+
+  document.getElementById('clear').addEventListener('click', function() {
+   var context = canvas.getContext('2d');
+   context.clearRect ( x , y , w , h );
+      });
+
 
   function doImage(err, canvas) {
     var img = document.createElement('img');
@@ -1634,6 +1703,11 @@ $(document).on('ready page:load', function() {
     snapshot.innerHTML = '';
     snapshot.appendChild(img);
   };
+
+  // function removeImage(err, canvas) {
+  //   snapshot.innerHTML = '';
+    
+  // };
 
 
 });
