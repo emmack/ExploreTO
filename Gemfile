@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'sorcery'
+gem 'carrierwave'
 
 gem 'pg'
 gem 'bourbon'
