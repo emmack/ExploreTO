@@ -346,7 +346,7 @@ color:pink;
 
   width: 450px;
   @include box-sizing(border-box);
-  font-family: "Lucida Grande";
+  font-family: Arial;
   color: #0e7347;
   input[type="checkbox"] {
     display: none;
@@ -494,7 +494,7 @@ body {
 
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
-  font-family: Aria;
+  font-family: Arial;
   height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
