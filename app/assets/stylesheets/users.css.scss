@@ -25,7 +25,7 @@
       // color: $accordion-menu-color;
       padding: $accordion-menu-list-padding;
       display: block;
-      font-family: 'hipster script pro';
+      font-family: 'hipsterscriptpro';
       color: #133d71;
       text-align: center;
       font-size: 27px;
@@ -176,7 +176,7 @@
 }
 #logo {
   h2 {
-    font-family: 'hipster script pro';
+    font-family: 'hipsterscriptpro';
     color: #81bfdc;
     font-size: 50px;
     padding-top: 15px;
@@ -187,12 +187,12 @@
 }
 #nav {
   p {
-    font-family: 'campton';
+    font-family: 'Arial';
     padding-top: 15px;
     padding-left: 15px;
     text-align: right;
     padding-right: 10px;
-    font-size: 20px;
+    font-size: 15px;
   }
 
 }
@@ -235,7 +235,7 @@
       h1 {
         font-size: 150px;
         margin-bottom: 0.5em;
-        font-family: 'hipster script pro';
+        font-family: 'hipsterscriptpro';
         color: #133d71;
         margin-bottom: 0;
         padding-left: 115px;
@@ -248,19 +248,20 @@
       h2 {
         font-size: 40px;
         margin-bottom: 0.5em;
-        font-family: 'hipster script pro';
+        font-family: 'hipsterscriptpro';
         color: #133d71;
         margin-bottom: 0;
 
       }
       p {
-        font-family: 'campton';
+        font-family: 'Arial
+   ';
         margin: auto auto 3em;
         font-weight: 300;
         line-height: 1.4em;
         color: #5e9ca0;
         @include media($large-screen) {
-          font-size: 2.1em;
+          font-size: 1em;
           max-width: 100%;
         }
       }
@@ -291,7 +292,7 @@ color:pink;
 
 }
 .home {
-  font-family: 'bebas';
+  font-family: 'Aria';
   text-align: center;
   height: 100%;
   width: 100%;
@@ -327,7 +328,7 @@ color:pink;
 
   width: 450px;
   @include box-sizing(border-box);
-  font-family: homizio;
+  font-family: "Lucida Grande";
   color: #0e7347;
   input[type="checkbox"] {
     display: none;
@@ -388,6 +389,22 @@ color:pink;
   }
 
 }
+
+.cnvs {
+  width: 0px;
+  height: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+
+  &:photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 800px;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -459,7 +476,7 @@ body {
 
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
-  font-family: $serif;
+  font-family: Aria;
   height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
@@ -471,7 +488,7 @@ body {
     float: left;
     max-height: $centered-navigation-height;
     padding-left: $centered-navigation-padding;
-    font-family: hipster script pro;
+    font-family: hipsterscriptpro;
     font-size: 25px;
 
     @include media($horizontal-bar-mode) {
@@ -554,7 +571,8 @@ body {
     a {
       color: white;
       display: inline-block;
-      font-family: campton;
+      font-family: Arial
+ ;
 
 
       &:hover {
@@ -569,7 +587,7 @@ body {
     
     font-size: 20px;
     a{
-      font-family: hipster script pro;
+      font-family: hipsterscriptpro;
       font-size: 50px
     }
 
@@ -582,7 +600,7 @@ body {
   //   margin-bottom: -$centered-navigation-logo-height / 3;
   //   max-height: $centered-navigation-logo-height;
   //   opacity: .6;
-  //   font-family: hipster script pro;
+  //   font-family: hipsterscriptpro;
   // }
 
   // Sub menus
