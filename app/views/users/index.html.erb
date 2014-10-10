@@ -1,109 +1,213 @@
+ <button id='snap' class='ui-button'> 
+  <img src="/assets/cam.png" class ='before' alt="Snap a shot" />
+  <img src="/assets/flash.png" class = 'after' alt="Snap a shot" />
+</button>
+
 <div class="grid-items-lines">
-  <a href="javascript:void(0)" class="grid-item grid-item-big">
-    
-<div id='map'></div>
-  </a>
-  <a href="javascript:void(0)" class="grid-item">
 
+  <div class="grid-item grid-item-big">
+    <div id='map'></div>
+  </div>
 
-<ul class="accordion">
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">People</a> 
-    <ul class="submenu">
+  <div class="grid-item">
+    <ul class="accordion">
       <li>
-       <label class="label-switch" >
-       Population<input type="checkbox"  id='pop' /><div class='checkbox' ></div> 
-        </label>
-      </li>
-      <li>
-       <label class="label-switch">Population Change
-       <input type="checkbox" id='change'/> <div class='checkbox'  ></div>
-        </label>
-      </li>
-
-       <li>
-        <label class="label-switch">Population Density
-         <input type="checkbox" id='density'/>
-        <div class='checkbox' ></div>
-        </label>
-      </li>
-       <li>
-        <label class="label-switch">Population Immigrants
-         <input type="checkbox" id='immigrant'/>
-        <div class='checkbox'></div>
-        </label>
-      </li>
-         <li>
-          <label class="label-switch">Population Visible Minority
-           <input type="checkbox" id='vismin'/>
-        <div class='checkbox'></div>
-        </label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Education</a>
-    <ul class="submenu">
-      <li>
-      <label class="label-switch">No Education Certification
-       <input type="checkbox" id='nocert'/>
-        <div class='checkbox' ></div>
-        </label>
-      </li>
-      <li>
-      <label class="label-switch">High School Certification
-       <input type="checkbox" id='highschool'/>
-         <div class='checkbox'  ></div>
-         </label>
-      </li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">Map Options</a> 
+        <ul class="submenu">
           <li>
-          <label class="label-switch">University Degree
-           <input type="checkbox" id='university'/>
-          <div class='checkbox'  ></div>
+           <label class="label-switch" >
+            <input type="checkbox"  id='areaName' /><div class='checkbox' ></div> Add neighbourhoods
           </label>
-      </li>
-    </ul>
-  </li>
+        </li>
+      </ul>
+    </li>
     <li>
-
-    <a href="javascript:void(0)" class="js-accordion-trigger">Transportation</a>
-    <ul class="submenu">
       <li>
-      <label class="label-switch">Car
-       <input type="checkbox" id='car'/>
-        <div class='checkbox'  ></div>
-       </label>
-      </li>
-     
-    </ul>
-  </li>
-   <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Shelter Costs</a>
-  </li>
-   <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Work and Income</a>
+        <a href="javascript:void(0)" class="js-accordion-trigger">People</a> 
+        <ul class="submenu">
+          <li>
+           <label class="label-switch" >
+            <input type="checkbox"  id='pop' /><div class='checkbox' ></div> Population
+          </label>
+        </li>
+        <li>
+         <label class="label-switch">
+           <input type="checkbox" id='change'/> <div class='checkbox'  ></div>Population Change
+         </label>
+       </li>
 
-    <ul class="submenu">
-      <li>
-       <label class="label-switch">Unemployment Rate
-       <input type="checkbox" id='unemployment'/>
-        <div class='checkbox' ></div>
+       <li>
+        <label class="label-switch">
+         <input type="checkbox" id='density'/>
+         <div class='checkbox' ></div>Population Density
        </label>
-      </li>
-    </ul>
-  </li>
+     </li>
+     <li>
+      <label class="label-switch">
+       <input type="checkbox" id='immigrant'/>
+       <div class='checkbox'></div>Population Immigrants
+     </label>
+   </li>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='vismin'/>
+     <div class='checkbox'></div>Population Visible Minority
+   </label>
+ </li>
 </ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Education</a>
+  <ul class="submenu">
+    <li>
+      <label class="label-switch">
+       <input type="checkbox" id='nocert'/>
+       <div class='checkbox' ></div>No Education Certification
+     </label>
+   </li>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='highschool'/>
+     <div class='checkbox'  ></div>High School Certification
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='university'/>
+   <div class='checkbox'  ></div>University Degree
+ </label>
+</li>
+</ul>
+</li>
+<li>
 
-  </a>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Transportation</a>
+  <ul class="submenu">
+    <li>
+      <label class="label-switch">
+       <input type="checkbox" id='car'/>
+       <div class='checkbox'  ></div>Car
+     </label>
+   </li>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='publictrans'/>
+     <div class='checkbox'  ></div>Public Transit
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='walk'/>
+   <div class='checkbox'  ></div>Walk
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medcommute'/>
+   <div class='checkbox'  ></div>Median Commute Time
+ </label>
+</li>
+</ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Shelter Costs</a>
+  <ul class='submenu'>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='homeOwner'/>
+     <div class='checkbox'  ></div>Home Ownership
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='homeRenter'/>
+   <div class='checkbox'  ></div>Home Rentals
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='over30'/>
+   <div class='checkbox'  ></div>Percent Income spent on housing: over 30%
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='under30'/>
+   <div class='checkbox'  ></div>Percent Income spent on housing: under 30%
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medown'/>
+   <div class='checkbox'  ></div>Median Mortage Payments
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medrent'/>
+   <div class='checkbox'  ></div>Median Rental Payments
+ </label>
+</li>
+</ul>
+</li>
+
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Work and Income</a>
+
+  <ul class="submenu">
+    <li>
+     <label class="label-switch">
+       <input type="checkbox" id='unemployment'/>
+       <div class='checkbox' ></div>Unemployment Rate
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
+       <input type="checkbox" id='medincome'/>
+       <div class='checkbox' ></div>Median Income
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
+       <input type="checkbox" id='lowincome'/>
+       <div class='checkbox' ></div>Prevalence Low Income
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
+       <input type="checkbox" id='topincome'/>
+       <div class='checkbox' ></div>Percent in top 50% deciles
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
+       <input type="checkbox" id='bottomincome'/>
+       <div class='checkbox' ></div>Percent in bottom 50% deciles
+     </label>
+   </li>
+ </ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Your Image</a>
+
+  <ul class="submenu">
+    <li>
+     <div id='snapshot'></div>
+
+   </li>
+   
+ </ul>
+</li>
+</ul>
+</div>
+
+<div class="grid-item">
 
 
-
-  <a href="javascript:void(0)" class="grid-item">
-  <button id='snap' class='ui-button'>Take a snapshot</button>
-	<div id='snapshot'></div>
-  </a>
-
-  
   <div class="right-cover"></div>
   <div class="bottom-cover"></div>
+</div>
+
+
+
 </div>

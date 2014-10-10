@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:index, :new, :create, :home]
+  skip_before_filter :require_login, only: [:index, :new, :create, :home, :about, :contact]
 
   def home
     render :home
@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    
   end
 
   private
