@@ -148,12 +148,6 @@ var loader = document.getElementById('loader');
     // })
     //used for all variables
 
-  document.getElementById('clear').addEventListener('click', function() {
-   var context = canvas.getContext('2d');
-   context.clearRect ( x , y , w , h );
-      });
-
-
      
 // map.addControl(printControl);
 
@@ -1011,7 +1005,7 @@ $('.after').hide();
   //car
   function getStyleHomeown(feature) {
     return {
-      fillColor: getColorHomeown(feature.properties.homeOwn),
+      fillColor: getColorHomeown(feature.properties.homeOwner),
       weight: 2,
       opacity: 1,
       color: 'white',
@@ -1075,7 +1069,7 @@ $('.after').hide();
   //car
   function getStyleHomerent(feature) {
     return {
-      fillColor: getColorHomerent(feature.properties.homeRent),
+      fillColor: getColorHomerent(feature.properties.homeRenter),
       weight: 2,
       opacity: 1,
       color: 'white',

@@ -6,203 +6,199 @@
 <div class="grid-items-lines">
 
   <div class="grid-item grid-item-big">
-
- 
     <div id='map'></div>
-<!--     <div id='loader'><span class='message'>Loading...</span></div>
- -->  </div>
+  </div>
 
-<div class="grid-item">
-  <ul class="accordion">
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Map Options</a> 
-    <ul class="submenu">
+  <div class="grid-item">
+    <ul class="accordion">
       <li>
-       <label class="label-switch" >
-        <input type="checkbox"  id='areaName' /><div class='checkbox' ></div> Add neighbourhoods
-        </label>
-      </li>
-    </ul>
-  </li>
-  <li>
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">People</a> 
-    <ul class="submenu">
+        <a href="javascript:void(0)" class="js-accordion-trigger">Map Options</a> 
+        <ul class="submenu">
+          <li>
+           <label class="label-switch" >
+            <input type="checkbox"  id='areaName' /><div class='checkbox' ></div> Add neighbourhoods
+          </label>
+        </li>
+      </ul>
+    </li>
+    <li>
       <li>
-       <label class="label-switch" >
-      <input type="checkbox"  id='pop' /><div class='checkbox' ></div> Population
-        </label>
-      </li>
-      <li>
-       <label class="label-switch">
-       <input type="checkbox" id='change'/> <div class='checkbox'  ></div>Population Change
-        </label>
-      </li>
+        <a href="javascript:void(0)" class="js-accordion-trigger">People</a> 
+        <ul class="submenu">
+          <li>
+           <label class="label-switch" >
+            <input type="checkbox"  id='pop' /><div class='checkbox' ></div> Population
+          </label>
+        </li>
+        <li>
+         <label class="label-switch">
+           <input type="checkbox" id='change'/> <div class='checkbox'  ></div>Population Change
+         </label>
+       </li>
 
        <li>
         <label class="label-switch">
          <input type="checkbox" id='density'/>
-        <div class='checkbox' ></div>Population Density
-        </label>
-      </li>
-       <li>
-        <label class="label-switch">
-         <input type="checkbox" id='immigrant'/>
-        <div class='checkbox'></div>Population Immigrants
-        </label>
-      </li>
-         <li>
-          <label class="label-switch">
-           <input type="checkbox" id='vismin'/>
-        <div class='checkbox'></div>Population Visible Minority
-        </label>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Education</a>
-    <ul class="submenu">
-      <li>
+         <div class='checkbox' ></div>Population Density
+       </label>
+     </li>
+     <li>
+      <label class="label-switch">
+       <input type="checkbox" id='immigrant'/>
+       <div class='checkbox'></div>Population Immigrants
+     </label>
+   </li>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='vismin'/>
+     <div class='checkbox'></div>Population Visible Minority
+   </label>
+ </li>
+</ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Education</a>
+  <ul class="submenu">
+    <li>
       <label class="label-switch">
        <input type="checkbox" id='nocert'/>
-        <div class='checkbox' ></div>No Education Certification
-        </label>
-      </li>
-      <li>
-      <label class="label-switch">
-       <input type="checkbox" id='highschool'/>
-         <div class='checkbox'  ></div>High School Certification
-         </label>
-      </li>
-          <li>
-          <label class="label-switch">
-           <input type="checkbox" id='university'/>
-          <div class='checkbox'  ></div>University Degree
-          </label>
-      </li>
-    </ul>
-  </li>
-    <li>
+       <div class='checkbox' ></div>No Education Certification
+     </label>
+   </li>
+   <li>
+    <label class="label-switch">
+     <input type="checkbox" id='highschool'/>
+     <div class='checkbox'  ></div>High School Certification
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='university'/>
+   <div class='checkbox'  ></div>University Degree
+ </label>
+</li>
+</ul>
+</li>
+<li>
 
-    <a href="javascript:void(0)" class="js-accordion-trigger">Transportation</a>
-    <ul class="submenu">
-      <li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Transportation</a>
+  <ul class="submenu">
+    <li>
       <label class="label-switch">
        <input type="checkbox" id='car'/>
-        <div class='checkbox'  ></div>Car
-       </label>
-      </li>
-       <li>
-      <label class="label-switch">
-       <input type="checkbox" id='publictrans'/>
-        <div class='checkbox'  ></div>Public Transit
-       </label>
-      </li>
-           <li>
-      <label class="label-switch">
-       <input type="checkbox" id='walk'/>
-        <div class='checkbox'  ></div>Walk
-       </label>
-      </li>
-              <li>
-      <label class="label-switch">
-       <input type="checkbox" id='medcommute'/>
-        <div class='checkbox'  ></div>Median Commute Time
-       </label>
-      </li>
-    </ul>
-  </li>
+       <div class='checkbox'  ></div>Car
+     </label>
+   </li>
    <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Shelter Costs</a>
-    <ul class='submenu'>
-             <li>
-      <label class="label-switch">
-       <input type="checkbox" id='homeOwner'/>
-        <div class='checkbox'  ></div>Home Ownership
-       </label>
-      </li>
-              <li>
-      <label class="label-switch">
-       <input type="checkbox" id='homeRenter'/>
-        <div class='checkbox'  ></div>Home Rentals
-       </label>
-      </li>
-       <li>
-      <label class="label-switch">
-       <input type="checkbox" id='over30'/>
-        <div class='checkbox'  ></div>Percent Income spent on housing: over 30%
-       </label>
-      </li>
-       <li>
-      <label class="label-switch">
-       <input type="checkbox" id='under30'/>
-        <div class='checkbox'  ></div>Percent Income spent on housing: under 30%
-       </label>
-      </li>
-       <li>
-      <label class="label-switch">
-       <input type="checkbox" id='medown'/>
-        <div class='checkbox'  ></div>Median Mortage Payments
-       </label>
-      </li>
-       <li>
-      <label class="label-switch">
-       <input type="checkbox" id='medrent'/>
-        <div class='checkbox'  ></div>Median Rental Payments
-       </label>
-      </li>
-      </ul>
-  </li>
- 
+    <label class="label-switch">
+     <input type="checkbox" id='publictrans'/>
+     <div class='checkbox'  ></div>Public Transit
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='walk'/>
+   <div class='checkbox'  ></div>Walk
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medcommute'/>
+   <div class='checkbox'  ></div>Median Commute Time
+ </label>
+</li>
+</ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Shelter Costs</a>
+  <ul class='submenu'>
    <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Work and Income</a>
+    <label class="label-switch">
+     <input type="checkbox" id='homeOwner'/>
+     <div class='checkbox'  ></div>Home Ownership
+   </label>
+ </li>
+ <li>
+  <label class="label-switch">
+   <input type="checkbox" id='homeRenter'/>
+   <div class='checkbox'  ></div>Home Rentals
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='over30'/>
+   <div class='checkbox'  ></div>Percent Income spent on housing: over 30%
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='under30'/>
+   <div class='checkbox'  ></div>Percent Income spent on housing: under 30%
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medown'/>
+   <div class='checkbox'  ></div>Median Mortage Payments
+ </label>
+</li>
+<li>
+  <label class="label-switch">
+   <input type="checkbox" id='medrent'/>
+   <div class='checkbox'  ></div>Median Rental Payments
+ </label>
+</li>
+</ul>
+</li>
 
-    <ul class="submenu">
-      <li>
-       <label class="label-switch">
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Work and Income</a>
+
+  <ul class="submenu">
+    <li>
+     <label class="label-switch">
        <input type="checkbox" id='unemployment'/>
-        <div class='checkbox' ></div>Unemployment Rate
-       </label>
-      </li>
-         <li>
-       <label class="label-switch">
+       <div class='checkbox' ></div>Unemployment Rate
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
        <input type="checkbox" id='medincome'/>
-        <div class='checkbox' ></div>Median Income
-       </label>
-      </li>
-            <li>
-       <label class="label-switch">
+       <div class='checkbox' ></div>Median Income
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
        <input type="checkbox" id='lowincome'/>
-        <div class='checkbox' ></div>Prevalence Low Income
-       </label>
-      </li>
-        <li>
-       <label class="label-switch">
+       <div class='checkbox' ></div>Prevalence Low Income
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
        <input type="checkbox" id='topincome'/>
-        <div class='checkbox' ></div>Percent in top 50% deciles
-       </label>
-      </li>
-        <li>
-       <label class="label-switch">
+       <div class='checkbox' ></div>Percent in top 50% deciles
+     </label>
+   </li>
+   <li>
+     <label class="label-switch">
        <input type="checkbox" id='bottomincome'/>
-        <div class='checkbox' ></div>Percent in bottom 50% deciles
-       </label>
-      </li>
-    </ul>
-  </li>
-     <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Your Image</a>
+       <div class='checkbox' ></div>Percent in bottom 50% deciles
+     </label>
+   </li>
+ </ul>
+</li>
+<li>
+  <a href="javascript:void(0)" class="js-accordion-trigger">Your Image</a>
 
-    <ul class="submenu">
-      <li>
+  <ul class="submenu">
+    <li>
      <div id='snapshot'></div>
-     <button id='clear' class='ui-button'>Clear</button>
 
-      </li>
-      
-    </ul>
-  </li>
-  </ul>
+   </li>
+   
+ </ul>
+</li>
+</ul>
 </div>
 
 <div class="grid-item">
