@@ -16,7 +16,9 @@ h4,
 h5,
 h6 {
   font-family: $header-font-family;
+
   font-family: '/fonts/hipsterscriptpro';
+
   line-height: $header-line-height;
   margin: 0;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
