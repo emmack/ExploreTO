@@ -1,40 +1,38 @@
-$(document).on('ready page:load', function() {
-  $(window).load(function() {
-    $(".loader").fadeOut("slow");
-  });
+$(document).ready(function() {
+  // $(document).on('ready page:load', function() {
+  // $(window).load(function() {
+  //   $(".loader").fadeOut("slow");
+  // });
   //initializing map
-  L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoielJhcE5rQSJ9.48SeBhKu9xYzeJewmICWIA';
+  L.mapbox.accessToken = 'pk.eyJ1IjoiZWNrb3R6ZXIiLCJhIjoidTVwZDdCOCJ9.NKe9dqQ5Mitv2QYu9-dLJA';
   var map = L.mapbox.map('map', 'eckotzer.ee86ecce')
     .setView([43.6525, -79.381667], 10);
+var snapshot = document.getElementById('snapshot');
+var loader = document.getElementById('loader');
+
+// startLoading();
+// L.mapbox.tileLayer('eckotzer.ee86ecce')
+//     .addTo(map) // add your tiles to the map
+//     .on('load', finishedLoading); // when the tiles load, remove the screen
 
 
+// function startLoading() {
+//     loader.className = '';
+// }
 
- $('.after').hide();
-  $('.before').show();
-
-  document.getElementById('snap').addEventListener('click', function() {
-    leafletImage(map, doImage);
-    $('.before').toggle();
-     $('.after').toggle();
-  });
-
-  document.getElementById('clear').addEventListener('click', function() {
-   var context = canvas.getContext('2d');
-   context.clearRect ( x , y , w , h );
-      });
+//  function finishedLoading() {
+//     // first, toggle the class 'done', which makes the loading screen
+//     // fade out
+//     loader.className = 'done';
+//     setTimeout(function() {
+//         // then, after a half-second, add the class 'hide', which hides
+//         // it completely and ensures that the user can interact with the
+//         // map again.
+//         loader.className = 'hide';
+//     }, 1000);
+// }
 
 
-  function doImage(err, canvas) {
-    var img = document.createElement('img');
-    var dimensions = map.getSize();
-    img.width = dimensions.x;
-    img.height = dimensions.y;
-    img.src = canvas.toDataURL();
-    snapshot.innerHTML = '';
-    snapshot.appendChild(img);
-  };
-
-  
   //layers
   var immigrantLayer = L.geoJson(torontoData, {
     style: getStyleImmigrant,
@@ -149,6 +147,46 @@ $(document).on('ready page:load', function() {
     //   onEachFeature: onEachFeatureHood
     // })
     //used for all variables
+
+  document.getElementById('clear').addEventListener('click', function() {
+   var context = canvas.getContext('2d');
+   context.clearRect ( x , y , w , h );
+      });
+
+
+     
+// map.addControl(printControl);
+
+
+//  html2canvas(map, {
+//   onrendered: function(canvas) {
+//   map.appendChild(canvas);
+//   }
+//   width: 300,
+//   height: 300
+// });
+
+
+
+$('.after').hide();
+  $('.before').show();
+
+  document.getElementById('snap').addEventListener('click', function() {
+  leafletImage(map, doImage)
+    $('.before').toggle();
+     $('.after').toggle();
+  });
+
+
+  function doImage(err, canvas) {
+    var img = new Image()
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    snapshot.innerHTML = '';
+    snapshot.appendChild(img);
+  };
 
 
   function zoomToFeature(e) {
@@ -1656,8 +1694,10 @@ $(document).on('ready page:load', function() {
   }
 
 
+
+
   var info;
-  //menu
+  //menuu
   // addLayer(neighbourhoodsLayer, 'areaName', -1);
   addLayer(populationLayer, 'pop', 1, infoPopulation);
   addLayer(popchangeLayer, 'change', 2, infoPopchange);
