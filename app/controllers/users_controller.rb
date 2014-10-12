@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     render :home
   end
 
-  def in
+  def login
     @users = User.all
   end
 
