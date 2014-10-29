@@ -1,6 +1,10 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#chart-box {
+  width: 1000px;
+  height: 1000px;
+}
 .header {
   background-color: white;
   height: 40px;
@@ -25,9 +29,6 @@
       margin-bottom: -1px;
     }
   }
-}
-#map_edu, #map_pop, #map_inc, #map_trans, #map_sheltor {
-  height: 1600px;
 }
 #loader {
   position: absolute;

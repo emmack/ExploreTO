@@ -1,4 +1,6 @@
 function edu() {
+  $('.map').css("height", '0px');
+  $('#map_edu').css("height", '830px');
   cartodb.createVis('map_edu', 'http://emmack.cartodb.com/api/v2/viz/8ef590ee-5eda-11e4-a9c3-0e018d66dc29/viz.json', {
       shareable: true,
       title: true,
@@ -31,6 +33,8 @@ function edu() {
 }
 
 function pop() {
+  $('.map').css("height", '0px');
+  $('#map_pop').css("height", '830px');
   cartodb.createVis('map_pop', 'http://emmack.cartodb.com/api/v2/viz/07eadc48-5edb-11e4-a83d-0e4fddd5de28/viz.json', {
       shareable: true,
       title: true,
@@ -62,8 +66,10 @@ function pop() {
     });
 }
 
-function sheltor() {
-  cartodb.createVis('map_sheltor', 'http://emmack.cartodb.com/api/v2/viz/e69e6aae-5ee5-11e4-a91d-0e853d047bba/viz.json', {
+function shelter() {
+  $('.map').css("height", '0px');
+  $('#map_shelter').css("height", '830px');
+  cartodb.createVis('map_shelter', 'http://emmack.cartodb.com/api/v2/viz/fa8c72f6-5ee3-11e4-a944-0e4fddd5de28/viz.json', {
       shareable: true,
       title: true,
       description: true,
@@ -96,6 +102,8 @@ function sheltor() {
 
 
 function inc() {
+  $('.map').css("height", '0px');
+  $('#map_inc').css("height", '830px');
   cartodb.createVis('map_inc', 'http://emmack.cartodb.com/api/v2/viz/27ee292e-5edf-11e4-a55a-0e853d047bba/viz.json', {
       shareable: true,
       title: true,
@@ -128,6 +136,8 @@ function inc() {
 }
 
 function trans() {
+  $('.map').css("height", '0px');
+  $('#map_trans').css("height", '830px');
   cartodb.createVis('map_trans', 'http://emmack.cartodb.com/api/v2/viz/e69e6aae-5ee5-11e4-a91d-0e853d047bba/viz.json', {
       shareable: true,
       title: true,

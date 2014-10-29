@@ -1,61 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", '1', {packages:['corechart']});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var query = new google.visualization.Query(
+        'https://docs.google.com/spreadsheets/d/1B72ZDWCW8cYEu9W6Z3BrzemVomZHja4MAf5nntowKF4/edit#gid=0');
+      query.send(handleQueryResponse);
+    }
+
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+      var data = response.getDataTable();
+      var options = {
+        title: 'Population vs. Population Change',
+        hAxis: {title: 'Population'},
+        vAxis: {title: 'Population Change'},
+        legend: 'none',
+        'width':1000,
+        'height':800,
+        trendlines: { 0: {} }    // Draw a trendline for data series 0.
+      };
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('trendline'));
+      chart.draw(data, options);
+    }
+  </script>
+
   <title>ExploreTO</title>
   <!-- Latest compiled and minified CSS -->
-   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
-    
-<header class="centered-navigation">
-  <div class="centered-navigation-wrapper">
-    <a href="" class="centered-navigation-menu-button">MENU</a>
-    <ul class="centered-navigation-menu" style="
-    padding-top: 10px;">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+
+  <header class="centered-navigation">
+    <div class="centered-navigation-wrapper">
+      <a href="" class="centered-navigation-menu-button">MENU</a>
+      <ul class="centered-navigation-menu" style="
+      padding-top: 10px;">
       <li class="nav-link">
-         <%= link_to "About", about_path %>
-      </li>
-      <li class="nav-link">
+       <%= link_to "About", about_path %>
+     </li>
+     <li class="nav-link">
       <%= link_to "Contact Us", contact_path %>
-      </li>
-      <li class="nav-link logo">
-        <%= link_to "Map Time", users_path, { 'data-no-turbolink' => true } %> 
-      </li>
-      <li class="nav-link">
+    </li>
+    <li class="nav-link logo">
+      <%= link_to "Map Time", users_path, { 'data-no-turbolink' => true } %> 
+    </li>
+    <li class="nav-link">
       <%if current_user %>
-        <%= link_to "Profile", user_path(current_user.id)%>
+      <%= link_to "Profile", user_path(current_user.id)%>
       <%else%>
       <%= link_to "Login", :login %>
       <%end%>
-      </li>
-      <li class="nav-link">
+    </li>
+    <li class="nav-link">
       <%if current_user %>
-        <%= link_to "Logout", :logout, method: :post %>
+      <%= link_to "Logout", :logout, method: :post %>
       <%else%>
       <%= link_to "Sign Up", new_user_path %>
       <%end%>
-      </li>
-    </ul>
-  </div>
+    </li>
+  </ul>
+</div>
 
-   <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
+<div>
+  <p id="notice"><%= flash[:notice] %></p>
+  <p id="alert"><%= flash[:alert] %></p>
+</div>
 
 </header>
 
 </head>
+<body>
 
 
-  
 
 
-<%= yield %>
+  <%= yield %>
 
 
 </body>
