@@ -1,0 +1,32 @@
+google.load('visualization', '1', {
+  packages: ['corechart']
+});
+console.log("test")
+
+function drawVisualization() {
+  var queryText = encodeURIComponent("SELECT <%= var1.name%>, <%= var2.name%> FROM 1ANohL0vlL2Z4dP5yE-bV34rONS8WdG9L0_3TXo23");
+  google.visualization.drawChart({
+    "containerId": "graph",
+    "dataSourceUrl": 'https://www.google.com/fusiontables/gvizdata?tq=',
+    "query": "SELECT <%= var1.name%>, <%= var2.name%> FROM 1ANohL0vlL2Z4dP5yE-bV34rONS8WdG9L0_3TXo23",
+    "refreshInterval": 5,
+    "chartType": "ScatterChart",
+    "options": {
+      "title": "Population density vs total population",
+      "vAxis": {
+        "title": "Population"
+      },
+      "hAxis": {
+        "title": "Population density"
+      },
+      "trendlines": {
+        0: {}
+      },
+      height: 1000,
+      width: 1000
+
+    }
+  });
+}
+
+google.setOnLoadCallback(drawVisualization);

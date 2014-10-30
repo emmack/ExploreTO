@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'contact' => 'users#contact', :as => :contact
   
   root :to => 'users#home'
+  resources :graphs
 
   # You can have the root of your site routed with "root"
 

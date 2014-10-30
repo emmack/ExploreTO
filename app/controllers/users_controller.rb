@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  before_action :load_user, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login, only: [:index, :new, :create, :home, :about, :contact, :login]
+  # before_action :load_user, only: [:show, :edit, :update, :destroy]
+  # skip_before_filter :require_login, only: [:index, :new, :create, :home, :about, :contact, :login, :graphs]
 
   def home
     render :home
@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   def login
     @users = User.all
   end
+  def index
+      @graph = Graph.new
+    end
 
   def new
     @user = User.new

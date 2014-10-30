@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009174900) do
+ActiveRecord::Schema.define(version: 20141030174505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20141009174900) do
     t.string   "photo"
   end
 
+  create_table "graphs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "var1_id"
+    t.integer  "var2_id"
+  end
+
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
@@ -59,9 +66,11 @@ ActiveRecord::Schema.define(version: 20141009174900) do
   end
 
   add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
@@ -83,10 +92,23 @@ ActiveRecord::Schema.define(version: 20141009174900) do
     t.string   "reset_password_token"
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+
+  create_table "var1s", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "var2s", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
 end
