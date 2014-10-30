@@ -32,6 +32,7 @@
 <div class='map' id="map_trans"></div>
 <div class='map' id="map_inc"></div>
 
+
 <div class='graphPage'>
 <h1> Regression Analysis </h1><br>
 <p> Curious how one variable might affect another? Try out the trendline caluator for a customized linear regression. 
@@ -39,45 +40,64 @@
 <br>
 Choose a variable for the X and Y axis and see the general relationship.</p>
 <br>
-<form name="valform" action="" method="POST">
-<div class ='label'>
-Variable 1 </div>
-<select name="var1" id="var1">
-	<option value="Population">Population</option>
-	<option value="popchange">Population Change</option>
-	<option value="density">Population Density</option>
-	<option value="density">Population Density</option>
-	<option value="immigrant">Immigrant Population</option>
-	<option value="vismin">Vismin Population</option>
-	<option value="nocert">Population Density</option>
-	<option value="highschool">Population Density</option>
-	<option value="university">Population Density</option>
-	<option value="unemployment">Population Density</option>
-	<option value="car">Population Density</option>
-	<option value="publictrans">Population Density</option>
-	<option value="walk">Population Density</option>
-	<option value="medcommute">Population Density</option>
-	<option value="homeowner">Population Density</option>
-	<option value="homerenter">Population Density</option>
-	<option value="over30">Population Density</option>
-	<option value="under30">Population Density</option>
-	<option value="medownpay">Population Density</option>
-	<option value="medrentpay">Population Density</option>
-	<option value="medincome">Population Density</option>
-	<option value="topincome">Population Density</option>
-	<option value="bottomincome">Population Density</option>
-	<option value="lowincome">Population Density</option>
+<form id='regression-form' action="" method="POST">
 
-</select>
+	X-Axis<br/>
+	Variable 1 <select name="var1" id="var1">
+	<option value="Population">Population (number of people)</option>
+	<option value="popchange">Population Change (%)</option>
+	<option value="density">Population Density (people per square km)</option>
+	<option value="immigrant">Immigrant Population (%)</option>
+	<option value="vismin">Visible Minorities in Population (%)</option>
+	<option value="nocert">No Education Certificate (%)</option>
+	<option value="highschool">High School Certificate Only (%)</option>
+	<option value="university">University Diploma (%)</option>
+  <option value="medcommute">Median Commute Time (minutes)</option>
+  <option value="car">Commute by Car (%)</option>
+  <option value="publictrans">Commute by Public Transit (%)</option>
+  <option value="walk">Commute by Walking (%)</option>
+  <option value="homeowner">Home Owners (%)</option>
+  <option value="homerenter">Home Renters (%)</option>
+  <option value="medownpay">Median Mortgage Payment ($)</option>
+  <option value="medrentpay">Median Rent Payment (%)</option>
+  <option value="medincome">Median Income ($)</option>
+	<option value="unemployment">Unemployment Rate (%)</option>
+  <option value="under30">Under 30% of Income Spent on Housing (%)</option>
+	<option value="over30">Over 30% of Income Spent on Housing (%)</option>
+	<option value="topincome">Population in top 50% of incomes (%)</option>
+	<option value="bottomincome">Population in bottom 50% of incomes (%)</option>
+	<option value="lowincome">Population with low income (%, government definition)</option>
+  </select><br/>
 
+  Y-Axis<br/>
+  Variable 2 <select name="var2" id="var2">
+  <option value="Population">Population (number of people)</option>
+  <option value="popchange">Population Change (%)</option>
+  <option value="density">Population Density (people per square km)</option>
+  <option value="immigrant">Immigrant Population (%)</option>
+  <option value="vismin">Visible Minorities in Population (%)</option>
+  <option value="nocert">No Education Certificate (%)</option>
+  <option value="highschool">High School Certificate Only (%)</option>
+  <option value="university">University Diploma (%)</option>
+  <option value="medcommute">Median Commute Time (minutes)</option>
+  <option value="car">Commute by Car (%)</option>
+  <option value="publictrans">Commute by Public Transit (%)</option>
+  <option value="walk">Commute by Walking (%)</option>
+  <option value="homeowner">Home Owners (%)</option>
+  <option value="homerenter">Home Renters (%)</option>
+  <option value="medownpay">Median Mortgage Payment ($)</option>
+  <option value="medrentpay">Median Rent Payment (%)</option>
+  <option value="medincome">Median Income ($)</option>
+  <option value="unemployment">Unemployment Rate (%)</option>
+  <option value="under30">Under 30% of Income Spent on Housing (%)</option>
+  <option value="over30">Over 30% of Income Spent on Housing (%)</option>
+  <option value="topincome">Population in top 50% of incomes (%)</option>
+  <option value="bottomincome">Population in bottom 50% of incomes (%)</option>
+  <option value="lowincome">Population with low income (%, government definition)</option>
+  </select><br/>
+  
+  <input type="button" name="submit" id='makegraph' value="Graph It!" onclick="drawVisualization()" />
 
-<div class ='label'>
-Variable 2 </div> <select name="var2" id="var2">
-<option value="Population">Population</option>
-<option value="popchange">Population Change</option>
-<option value="density">Population Density</option>
-</select><br/>
-<input type="button" name="submit" value="Graph It!" onclick="drawVisualization()" />
 </form>
 </div>
 
