@@ -1,213 +1,110 @@
- <button id='snap' class='ui-button'> 
-  <img src="/assets/cam.png" class ='before' alt="Snap a shot" />
-  <img src="/assets/flash.png" class = 'after' alt="Snap a shot" />
-</button>
+<div class='header'>
 
-<div class="grid-items-lines">
-
-  <div class="grid-item grid-item-big">
-    <div id='map'></div>
+  <div class='function-menu'>
+    <a href="javascript:void(0)" class="js-accordion-trigger maps-trigger">Maps</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0)" class="js-accordion-trigger graphs-trigger">Graphs</a>
+    <div class='maps-menu'>
+        <ul class="submenu maps-submenu">
+          <li>
+            <a href="javascript:edu()" class='categories'>Education</a>
+          </li>
+          <li>
+            <a href="javascript:pop()"class='categories' >Population</a>
+          </li>
+          <li>
+            <a href="javascript:shelter()" class='categories' >Shelter</a>
+          </li>
+          <li>
+            <a href="javascript:trans()" class='categories'> Transportation</a>
+          </li>
+          <li>
+            <a href="javascript:inc()" class='categories'>Income</a>
+          </li>
+        </ul>
+    </div>
   </div>
 
-  <div class="grid-item">
-    <ul class="accordion">
-      <li>
-        <a href="javascript:void(0)" class="js-accordion-trigger">Map Options</a> 
-        <ul class="submenu">
-          <li>
-           <label class="label-switch" >
-            <input type="checkbox"  id='areaName' /><div class='checkbox' ></div> Add neighbourhoods
-          </label>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <li>
-        <a href="javascript:void(0)" class="js-accordion-trigger">People</a> 
-        <ul class="submenu">
-          <li>
-           <label class="label-switch" >
-            <input type="checkbox"  id='pop' /><div class='checkbox' ></div> Population
-          </label>
-        </li>
-        <li>
-         <label class="label-switch">
-           <input type="checkbox" id='change'/> <div class='checkbox'  ></div>Population Change
-         </label>
-       </li>
-
-       <li>
-        <label class="label-switch">
-         <input type="checkbox" id='density'/>
-         <div class='checkbox' ></div>Population Density
-       </label>
-     </li>
-     <li>
-      <label class="label-switch">
-       <input type="checkbox" id='immigrant'/>
-       <div class='checkbox'></div>Population Immigrants
-     </label>
-   </li>
-   <li>
-    <label class="label-switch">
-     <input type="checkbox" id='vismin'/>
-     <div class='checkbox'></div>Population Visible Minority
-   </label>
- </li>
-</ul>
-</li>
-<li>
-  <a href="javascript:void(0)" class="js-accordion-trigger">Education</a>
-  <ul class="submenu">
-    <li>
-      <label class="label-switch">
-       <input type="checkbox" id='nocert'/>
-       <div class='checkbox' ></div>No Education Certification
-     </label>
-   </li>
-   <li>
-    <label class="label-switch">
-     <input type="checkbox" id='highschool'/>
-     <div class='checkbox'  ></div>High School Certification
-   </label>
- </li>
- <li>
-  <label class="label-switch">
-   <input type="checkbox" id='university'/>
-   <div class='checkbox'  ></div>University Degree
- </label>
-</li>
-</ul>
-</li>
-<li>
-
-  <a href="javascript:void(0)" class="js-accordion-trigger">Transportation</a>
-  <ul class="submenu">
-    <li>
-      <label class="label-switch">
-       <input type="checkbox" id='car'/>
-       <div class='checkbox'  ></div>Car
-     </label>
-   </li>
-   <li>
-    <label class="label-switch">
-     <input type="checkbox" id='publictrans'/>
-     <div class='checkbox'  ></div>Public Transit
-   </label>
- </li>
- <li>
-  <label class="label-switch">
-   <input type="checkbox" id='walk'/>
-   <div class='checkbox'  ></div>Walk
- </label>
-</li>
-<li>
-  <label class="label-switch">
-   <input type="checkbox" id='medcommute'/>
-   <div class='checkbox'  ></div>Median Commute Time
- </label>
-</li>
-</ul>
-</li>
-<li>
-  <a href="javascript:void(0)" class="js-accordion-trigger">Shelter Costs</a>
-  <ul class='submenu'>
-   <li>
-    <label class="label-switch">
-     <input type="checkbox" id='homeOwner'/>
-     <div class='checkbox'  ></div>Home Ownership
-   </label>
- </li>
- <li>
-  <label class="label-switch">
-   <input type="checkbox" id='homeRenter'/>
-   <div class='checkbox'  ></div>Home Rentals
- </label>
-</li>
-<li>
-  <label class="label-switch">
-   <input type="checkbox" id='over30'/>
-   <div class='checkbox'  ></div>Percent Income spent on housing: over 30%
- </label>
-</li>
-<li>
-  <label class="label-switch">
-   <input type="checkbox" id='under30'/>
-   <div class='checkbox'  ></div>Percent Income spent on housing: under 30%
- </label>
-</li>
-<li>
-  <label class="label-switch">
-   <input type="checkbox" id='medown'/>
-   <div class='checkbox'  ></div>Median Mortage Payments
- </label>
-</li>
-<li>
-  <label class="label-switch">
-   <input type="checkbox" id='medrent'/>
-   <div class='checkbox'  ></div>Median Rental Payments
- </label>
-</li>
-</ul>
-</li>
-
-<li>
-  <a href="javascript:void(0)" class="js-accordion-trigger">Work and Income</a>
-
-  <ul class="submenu">
-    <li>
-     <label class="label-switch">
-       <input type="checkbox" id='unemployment'/>
-       <div class='checkbox' ></div>Unemployment Rate
-     </label>
-   </li>
-   <li>
-     <label class="label-switch">
-       <input type="checkbox" id='medincome'/>
-       <div class='checkbox' ></div>Median Income
-     </label>
-   </li>
-   <li>
-     <label class="label-switch">
-       <input type="checkbox" id='lowincome'/>
-       <div class='checkbox' ></div>Prevalence Low Income
-     </label>
-   </li>
-   <li>
-     <label class="label-switch">
-       <input type="checkbox" id='topincome'/>
-       <div class='checkbox' ></div>Percent in top 50% deciles
-     </label>
-   </li>
-   <li>
-     <label class="label-switch">
-       <input type="checkbox" id='bottomincome'/>
-       <div class='checkbox' ></div>Percent in bottom 50% deciles
-     </label>
-   </li>
- </ul>
-</li>
-<li>
-  <a href="javascript:void(0)" class="js-accordion-trigger">Your Image</a>
-
-  <ul class="submenu">
-    <li>
-     <div id='snapshot'></div>
-
-   </li>
-   
- </ul>
-</li>
-</ul>
 </div>
 
-<div class="grid-item">
+<div class='map' id="map_edu"></div>
+<div class='map' id="map_pop"></div>
+<div class='map' id="map_shelter"></div>
+<div class='map' id="map_trans"></div>
+<div class='map' id="map_inc"></div>
 
 
-  <div class="right-cover"></div>
-  <div class="bottom-cover"></div>
+<div class='graphPage'>
+<h1> Regression Analysis </h1><br>
+<p> Curious how one variable might affect another? Try out the trendline caluator for a customized linear regression. 
+<br>
+<br>
+Choose a variable for the X and Y axis and see the general relationship.</p>
+<br>
+<form id='regression-form' action="" method="POST">
+
+	X-Axis<br/>
+	Variable 1 <select name="var1" id="var1">
+	<option value="Population">Population (number of people)</option>
+	<option value="popchange">Population Change (%)</option>
+	<option value="density">Population Density (people per square km)</option>
+	<option value="immigrant">Immigrant Population (%)</option>
+	<option value="vismin">Visible Minorities in Population (%)</option>
+	<option value="nocert">No Education Certificate (%)</option>
+	<option value="highschool">High School Certificate Only (%)</option>
+	<option value="university">University Diploma (%)</option>
+  <option value="medcommute">Median Commute Time (minutes)</option>
+  <option value="car">Commute by Car (%)</option>
+  <option value="publictrans">Commute by Public Transit (%)</option>
+  <option value="walk">Commute by Walking (%)</option>
+  <option value="homeowner">Home Owners (%)</option>
+  <option value="homerenter">Home Renters (%)</option>
+  <option value="medownpay">Median Mortgage Payment ($)</option>
+  <option value="medrentpay">Median Rent Payment (%)</option>
+  <option value="medincome">Median Income ($)</option>
+	<option value="unemployment">Unemployment Rate (%)</option>
+  <option value="under30">Under 30% of Income Spent on Housing (%)</option>
+	<option value="over30">Over 30% of Income Spent on Housing (%)</option>
+	<option value="topincome">Population in top 50% of incomes (%)</option>
+	<option value="bottomincome">Population in bottom 50% of incomes (%)</option>
+	<option value="lowincome">Population with low income (%, government definition)</option>
+  </select><br/>
+
+  Y-Axis<br/>
+  Variable 2 <select name="var2" id="var2">
+  <option value="Population">Population (number of people)</option>
+  <option value="popchange">Population Change (%)</option>
+  <option value="density">Population Density (people per square km)</option>
+  <option value="immigrant">Immigrant Population (%)</option>
+  <option value="vismin">Visible Minorities in Population (%)</option>
+  <option value="nocert">No Education Certificate (%)</option>
+  <option value="highschool">High School Certificate Only (%)</option>
+  <option value="university">University Diploma (%)</option>
+  <option value="medcommute">Median Commute Time (minutes)</option>
+  <option value="car">Commute by Car (%)</option>
+  <option value="publictrans">Commute by Public Transit (%)</option>
+  <option value="walk">Commute by Walking (%)</option>
+  <option value="homeowner">Home Owners (%)</option>
+  <option value="homerenter">Home Renters (%)</option>
+  <option value="medownpay">Median Mortgage Payment ($)</option>
+  <option value="medrentpay">Median Rent Payment (%)</option>
+  <option value="medincome">Median Income ($)</option>
+  <option value="unemployment">Unemployment Rate (%)</option>
+  <option value="under30">Under 30% of Income Spent on Housing (%)</option>
+  <option value="over30">Over 30% of Income Spent on Housing (%)</option>
+  <option value="topincome">Population in top 50% of incomes (%)</option>
+  <option value="bottomincome">Population in bottom 50% of incomes (%)</option>
+  <option value="lowincome">Population with low income (%, government definition)</option>
+  </select><br/>
+  
+  <input type="button" name="submit" id='makegraph' value="Graph It!" onclick="drawVisualization()" />
+
+</form>
+</div>
+
+<div id='chart-box'>
+	<span id='graph'></span>
 </div>
 
 
 
-</div>
+

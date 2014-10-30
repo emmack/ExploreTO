@@ -1,27 +1,81 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
+.submenu {
+  display: block;
+  background-color: #477dca;
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+}
+.graphPage {
+  margin-left: 15%;
+}
+h1 {
+  font-family: 'bebas';
+  color: #477dca;
+}
+.label {
+  font-family: 'bebas';
+  font-size: 25px;
+}
+#chart-box {
+  width: 800px;
+  height: 700px;
+  margin-top: 20px;
+  margin-left: 15%;
+}
+.header {
+  background-color: white;
+  height: 57px;
+  text-align: center;
+  font-family: 'Bebas';
+  font-size: 25px;
+  margin: 0 10px 40px 10px;
+  padding: 10px;
+  a.categories {
+    padding: 7px 20px 0 29px;
+    float: left;
+    color: black;
+    &:hover {
+      color: white;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.is-active {
+      border-bottom: 0;
+      border-bottom-color: yellow;
+      margin-bottom: -1px;
+    }
+  }
+}
 #loader {
-    position:absolute; top:0; bottom:0; width:100%;
-    background:rgba(255, 255, 255, 1);
-    transition:background 1s ease-out;
-    -webkit-transition:background 1s ease-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  transition: background 1s ease-out;
+  -webkit-transition: background 1s ease-out;
 }
 #loader.done {
-    background:rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0);
 }
 #loader.hide {
-    display:none;
+  display: none;
 }
 #loader .message {
-    position:absolute;
-    left:50%;
-    top:50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
-
-
+.function-menu {
+  display: inline;
+}
+.js-accordion-trigger {
+  padding: 0 10px;
+}
 .accordion {
   $accordion-menu-border-color: $base-border-color;
   $accordion-menu-color: $base-font-color;
@@ -32,15 +86,11 @@
   $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6);
   $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2);
   $accordion-menu-list-padding: $base-spacing/2 $gutter;
-
   background-color: $accordion-menu-background;
   border: $accordion-menu-border;
-  margin-bottom: $base-spacing;
-
   li {
     border-bottom: $accordion-menu-border;
     line-height: 1.1em;
-
     > a {
       // color: $accordion-menu-color;
       padding: $accordion-menu-list-padding;
@@ -49,43 +99,34 @@
       color: #133d71;
       text-align: center;
       font-size: 27px;
-
     }
     &:last-child {
       border: none;
-
     }
     &:hover {
       background-color: $accordion-menu-hover;
     }
-
   }
   ul.submenu {
     display: none;
-
     li {
       background-color: $accordion-menu-sub-background;
-
       &:first-child {
         border-top: $accordion-menu-border;
         box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;
-
       }
       &:hover {
         background-color: $accordion-menu-sub-hover;
       }
     }
-
   }
   .is-expanded {
     display: block;
-    padding-bottom: 0;
+    padding-bottom: 5px;
   }
-
 }
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
-
 }
 .grid-items-lines {
   // $grid-items-background: $base-background-color;
@@ -97,7 +138,6 @@
   $grid-item-height: 14em;
   @include clearfix;
   position: relative;
-
   .grid-item {
     @include transition (all 0.2s ease-in-out);
     height: $grid-item-height;
@@ -114,33 +154,27 @@
     border-left-width: 10px;
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
-
     }
     &:hover {
       background: transparentize($grid-item-color, .95);
     }
-
   }
   .grid-item img {
     display: block;
     height: 300px;
     height: 300px;
     margin-bottom: 1.2em;
-    
-
   }
   .grid-item h1 {
     color: black;
     font-size: 1.3em;
     margin-bottom: 0.4em;
-
   }
   .grid-item p {
     color: transparentize($grid-item-color, .4);
     @include media($medium-screen) {
       max-width: 70%;
     }
-
   }
   .grid-item-big {
     @include media($large-screen) {
@@ -151,7 +185,6 @@
         max-width: 60%;
       }
     }
-
   }
   // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
   .bottom-cover {
@@ -160,7 +193,6 @@
     width: 100%;
     height: 3px;
     // background: $grid-items-background;
-
   }
   .right-cover {
     position: absolute;
@@ -169,7 +201,6 @@
     width: 4px;
     // background: $grid-items-background;
   }
-
 }
 .wrapper {
   @include outer-container;
@@ -182,7 +213,6 @@
   .third {
     @include span-columns(3);
   }
-
 }
 .loader {
   position: fixed;
@@ -191,8 +221,7 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url("images/page-loader.gif") 50% 50% no-repeat rgb(249,249,249);
-
+  background: url("images/page-loader.gif") 50% 50% no-repeat rgb(249, 249, 249);
 }
 #logo {
   h2 {
@@ -203,7 +232,6 @@
     padding-left: 15px;
     text-align: left;
   }
-
 }
 #nav {
   p {
@@ -214,7 +242,6 @@
     padding-right: 10px;
     font-size: 15px;
   }
-
 }
 .hero {
   $hero-background-top: darken($base-accent-color, 25);
@@ -222,20 +249,16 @@
   $hero-color: white;
   $gradient-angle: 10deg;
   $hero-image: 'https: //raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png';
-
   @include background(url("/assets/toronto2.png"));
-
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
-
   padding-bottom: 4em;
   padding-top: 7em;
   height: 876px;
   .hero-logo img {
     height: 3em;
     margin-bottom: 2.5em;
-
   }
   .hero-inner {
     @include outer-container;
@@ -244,14 +267,11 @@
     margin: auto;
     text-align: center;
     // color: $hero-color;
-
     button {
       background-color: white;
-
     }
     .hero-copy {
       text-align: center;
-
       h1 {
         font-size: 150px;
         margin-bottom: 0.5em;
@@ -259,11 +279,9 @@
         color: #133d71;
         margin-bottom: 0;
         padding-left: 115px;
-
         @include media($large-screen) {
           // font-size: 1.8em;
         }
-
       }
       h2 {
         font-size: 40px;
@@ -271,12 +289,11 @@
         font-family: 'hipsterscriptpro';
         color: #133d71;
         margin-bottom: 0;
-
       }
       p {
         font-family: 'Arial
-   ';
-        margin: auto auto 3em;
+';
+ margin: auto auto 3em;
         font-weight: 300;
         line-height: 1.4em;
         color: #5e9ca0;
@@ -287,29 +304,24 @@
       }
     }
   }
-
 }
 .ui-button {
- position: absolute;
-z-index: 100;
-right: 936px;
-top: 61px;
-background: none;
-color:pink;
-
-&:hover {
+  position: absolute;
+  z-index: 100;
+  right: 936px;
+  top: 61px;
   background: none;
-}
-
+  color: pink;
+  &:hover {
+    background: none;
+  }
 }
 #map {
   width: 100%;
   height: 800px;
-
 }
 #snapshot {
   width: 100%;
-
 }
 .home {
   font-family: 'Aria';
@@ -319,12 +331,9 @@ color:pink;
   // margin: auto;
   margin-top: auto;
   margin-bottom: auto;
-
-  
   p {
     font-size: 15px;
   }
-
 }
 .label-switch {
   $switch-width: 35px;
@@ -343,14 +352,12 @@ color:pink;
   position: relative;
   vertical-align: middle;
   padding-left: 10px;
-
   width: 450px;
   @include box-sizing(border-box);
   font-family: Arial;
   color: #0e7347;
   input[type="checkbox"] {
     display: none;
-
     + .checkbox {
       background: #e5e5e5;
       border: none;
@@ -364,7 +371,6 @@ color:pink;
       z-index: 0;
       @include box-sizing(border-box);
       @include transition(all 0.3s ease);
-
       &:before {
         background: white;
         border-radius: $switch-radius;
@@ -376,7 +382,6 @@ color:pink;
         @include position(absolute, 2px 0 0 2px);
         @include transition(all 0.3s ease);
         @include transform(scale(1));
-
       }
       &:after {
         background: white;
@@ -385,19 +390,16 @@ color:pink;
         height: $knob-height;
         width: $knob-width;
         z-index: 2;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         @include position(absolute, 2px 0 0 2px);
         @include transition(all 0.3s ease);
       }
-
     }
     &:checked {
       +.checkbox {
         background: $blue;
-
         &:before {
           @include transform(scale(0));
-
         }
         &:after {
           left: $switch-width - $knob-width - ($switch-padding);
@@ -405,15 +407,12 @@ color:pink;
       }
     }
   }
-
 }
-
 .cnvs {
   width: 0px;
   height: 0px;
   margin-top: 0px;
   margin-left: 0px;
-
   &:photo {
     position: absolute;
     left: 0;
@@ -422,7 +421,6 @@ color:pink;
     height: 800px;
   }
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -431,24 +429,20 @@ body {
 .info {
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
 }
 .info h4 {
   margin: 0 0 5px;
   color: #777;
-
 }
 .tooltip {
   opacity: 1;
-
 }
 .map-tooltip {
   min-height: 80px;
   min-width: 320px;
-
 }
 #canvas {
   margin-left: 20px;
@@ -457,11 +451,9 @@ body {
   border: thin solid #aaa;
   cursor: crosshair;
   padding: 0;
-
 }
 #controls {
   margin: 20px 0 20px 20px;
-
 }
 #rubberbandDiv {
   position: absolute;
@@ -469,17 +461,7 @@ body {
   cursor: crosshair;
   display: none;
 }
-
-.before{
-
-}
-
-.after{
-
-}
-
-
-.centered-navigation {
+.before {} .after {} .centered-navigation {
   $centered-navigation-padding: 1em;
   $centered-navigation-logo-height: 2em;
   $centered-navigation-background: black;
@@ -491,29 +473,24 @@ body {
   $centered-navigation-submenu-width: 12em;
   $centered-navigation-item-nudge: 2.2em;
   $horizontal-bar-mode: $large-screen;
-
   background-color: $centered-navigation-background;
   border-bottom: 1px solid darken($centered-navigation-background, 6);
   font-family: Arial;
   height: $centered-navigation-height;
   width: 100%;
   z-index: 9999;
-  
   // Mobile view
-
   .mobile-logo {
-    display: inline;    
+    display: inline;
     float: left;
     max-height: $centered-navigation-height;
     padding-left: $centered-navigation-padding;
     font-family: hipsterscriptpro;
     font-size: 25px;
-
     @include media($horizontal-bar-mode) {
       display: none;
     }
   }
-
   .centered-navigation-menu-button {
     color: $centered-navigation-color;
     display: block;
@@ -523,26 +500,21 @@ body {
     margin: 0;
     padding-right: $centered-navigation-submenu-padding;
     text-transform: uppercase;
-
     @include media ($horizontal-bar-mode) {
       display: none;
     }
-
     &:hover {
       color: $centered-navigation-color-hover;
     }
   }
-
   // Nav menu
-
   .centered-navigation-wrapper {
     @include outer-container;
     @include clearfix;
     position: relative;
     z-index: 999;
   }
-
-  ul.centered-navigation-menu {    
+  ul.centered-navigation-menu {
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     clear: both;
     display: none;
@@ -551,21 +523,17 @@ body {
     padding: 0;
     width: 100%;
     z-index: 99999;
-
     @include media ($horizontal-bar-mode) {
       display: block;
       text-align: center;
     }
   }
-
   // The nav items
-
   .nav-link:first-child {
     @include media($horizontal-bar-mode) {
       margin-left: $centered-navigation-item-nudge;
     }
   }
-
   ul li.nav-link {
     background: $centered-navigation-background;
     display: block;
@@ -579,155 +547,122 @@ body {
     @include media($horizontal-bar-mode) {
       background: transparent;
       display: inline;
-      line-height: $centered-navigation-height;  
-
+      line-height: $centered-navigation-height;
       a {
         padding-right: $centered-navigation-item-padding;
       }
     }
-    
     a {
       color: white;
       display: inline-block;
-      font-family: Arial
- ;
-
-
+      font-family: Arial;
       &:hover {
         color: #81bfdc;
       }
     }
   }
-
   li.logo.nav-link {
     display: none;
     line-height: 0;
-    
     font-size: 20px;
-    a{
-      font-family: hipsterscriptpro;
+    a {
+      font-family: bebas;
+      margin-top: 18px;
       font-size: 50px
     }
-
     @include media($large-screen) {
       display: inline;
     }
   }
-
   // .logo a {
   //   margin-bottom: -$centered-navigation-logo-height / 3;
   //   max-height: $centered-navigation-logo-height;
   //   opacity: .6;
   //   font-family: hipsterscriptpro;
   // }
-
   // Sub menus
-
   li.more.nav-link {
     padding-right: 0;
-
     @include media($large-screen) {
       padding-right: $centered-navigation-submenu-padding;
     }
-
-    > ul > li:first-child a  {
+    > ul > li:first-child a {
       padding-top: 1em;
-
-
     }
-
     a {
       margin-right: $centered-navigation-submenu-padding;
     }
-
     > a {
       padding-right: 0.6em;
       padding-top: 0.5em;
     }
-
     > a:after {
       @include position(absolute, auto -.4em auto auto);
       color: $centered-navigation-color;
       content: '\25BE';
     }
   }
-
   li.more {
     overflow: visible;
     padding-right: 0;
-
     a {
       padding-right: $centered-navigation-submenu-padding;
     }
-
     > a {
       padding-right: 1.6em;
       position: relative;
-
       @include media($large-screen) {
         margin-right: $centered-navigation-submenu-padding;
       }
-
       &:after {
         content: '›';
         font-size: 1.2em;
         position: absolute;
         right: $centered-navigation-submenu-padding / 2;
-      }      
+      }
     }
-
     &:hover > .submenu {
       display: block;
     }
-
     @include media($horizontal-bar-mode) {
       padding-right: $centered-navigation-submenu-padding;
       position: relative;
     }
   }
-
   ul.submenu {
     display: none;
     padding-left: 0;
-
     @include media($horizontal-bar-mode) {
       left: -$centered-navigation-submenu-padding;
       position: absolute;
       top: 1.5em;
     }
-
     .submenu {
       @include media($horizontal-bar-mode) {
         left: $centered-navigation-submenu-width - .2em;
         top: 0;
       }
     }
-
     li {
       display: block;
       padding-right: 0;
-
       @include media($horizontal-bar-mode) {
         line-height: $centered-navigation-height / 1.3;
-
         &:first-child > a {
           border-top-left-radius: $base-border-radius;
           border-top-right-radius: $base-border-radius;
         }
-
         &:last-child > a {
           border-bottom-left-radius: $base-border-radius;
           border-bottom-right-radius: $base-border-radius;
           padding-bottom: .7em;
         }
       }
-
       a {
         background-color: darken($centered-navigation-background, 3);
         display: inline-block;
         text-align: right;
         width: 100%;
-
         @include media($horizontal-bar-mode) {
           background-color: $centered-navigation-background;
           padding-left: $centered-navigation-submenu-padding;
@@ -738,121 +673,110 @@ body {
     }
   }
 }
-
 .title {
-    padding-right:30px;
-    padding-left:30px;
-    font-family: 'hipsterscriptpro';
-    font-size: 40px;
-  }
-
-  .title1 {
-    padding-top: 30px;
-     padding-right:30px;
-    padding-left:30px;
-    font-family: 'hipsterscriptpro';
-    font-size: 25px;
-  }
-
-label{
- padding-bottom: 10px;
-padding-top: 10px;
-margin-bottom: 0px;
-padding-left: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-family: 'hipsterscriptpro';
+  font-size: 40px;
 }
-
-.loginbackground{
-background-color: white;
-opacity: 0.8;
-z-index: 10;
-width: 700px;
-height: 700px;
-position: relative;
-bottom: 945px;
-border-radius: 40px;
-left: 370px;
+.title1 {
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  font-family: 'hipsterscriptpro';
+  font-size: 25px;
 }
-
-.login{
-position: relative;
-
-z-index: 50;
-top: 85px;
-left: 660px;
+label {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  padding-left: 30px;
 }
-
+.loginbackground {
+  background-color: white;
+  opacity: 0.8;
+  z-index: 10;
+  width: 700px;
+  height: 700px;
+  position: relative;
+  bottom: 945px;
+  border-radius: 40px;
+  left: 370px;
+}
+.login {
+  position: relative;
+  z-index: 50;
+  top: 85px;
+  left: 660px;
+}
 #loginpage {
-// position: relative;
-height: 900px;
+  // position: relative;
+  height: 900px;
 }
-
 .backgroundimage {
-/* margin: 0px auto; */
-background-image: url(/assets/mapbackground.png);
-background-repeat: no-repeat;
-/* background-position: 43% 20%; */
-background-attachment: fixed;
-position: relative;
-z-index: 0;
-height: 900px;
-bottom: 120px;
-
-width: 1500px;
+  /* margin: 0px auto; */
+  
+  background-image: url(/assets/mapbackground.png);
+  background-repeat: no-repeat;
+  /* background-position: 43% 20%; */
+  
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+  height: 900px;
+  bottom: 120px;
+  width: 1500px;
 }
-
 .backgroundimage1 {
-/* margin: 0px auto; */
-background-image: url(/assets/red.png);
-background-repeat: no-repeat;
-/* background-position: 43% 20%; */
-background-attachment: fixed;
-position: relative;
-z-index: 0;
-height: 900px;
-bottom: 120px;
-
-width: 1500px;
+  /* margin: 0px auto; */
+  
+  background-image: url(/assets/red.png);
+  background-repeat: no-repeat;
+  /* background-position: 43% 20%; */
+  
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+  height: 900px;
+  bottom: 120px;
+  width: 1500px;
 }
-
 .backgroundimage2 {
-/* margin: 0px auto; */
-background-image: url(/assets/comic.png);
-background-repeat: no-repeat;
-/* background-position: 43% 20%; */
-background-attachment: fixed;
-position: relative;
-z-index: 0;
-height: 900px;
-bottom: 120px;
-
-width: 1500px;
+  /* margin: 0px auto; */
+  
+  background-image: url(/assets/comic.png);
+  background-repeat: no-repeat;
+  /* background-position: 43% 20%; */
+  
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+  height: 900px;
+  bottom: 120px;
+  width: 1500px;
 }
-
 .backgroundimage3 {
-/* margin: 0px auto; */
-background-image: url(/assets/pirate.png);
-background-repeat: no-repeat;
-/* background-position: 43% 20%; */
-background-attachment: fixed;
-position: relative;
-z-index: 0;
-height: 900px;
-bottom: 120px;
-
-width: 1500px;
+  /* margin: 0px auto; */
+  
+  background-image: url(/assets/pirate.png);
+  background-repeat: no-repeat;
+  /* background-position: 43% 20%; */
+  
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
+  height: 900px;
+  bottom: 120px;
+  width: 1500px;
 }
-
 $side-image-background-top: #B5EBEB;
 $side-image-background-bottom: #5DAC5D;
 $side-image-border: 1px solid darken(transparentize($side-image-background-bottom, .8), 30);
-
 .side-image {
   background: #F9F9F9;
-
   @include media($large-screen) {
     @include row(table);
   }
-
   .images-wrapper1 {
     @include background(url('/assets/red.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
@@ -861,7 +785,6 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
     display: block;
     min-height: 12em;
     padding: 3em;
-
     @include media($large-screen) {
       @include span-columns(4);
       background-position: bottom;
@@ -869,8 +792,7 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
       border-right: $side-image-border;
     }
   }
-
-    .images-wrapper2 {
+  .images-wrapper2 {
     @include background(url('/assets/comic.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
     border-bottom: $side-image-border;
@@ -878,7 +800,6 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
     display: block;
     min-height: 12em;
     padding: 3em;
-
     @include media($large-screen) {
       @include span-columns(4);
       background-position: bottom;
@@ -886,8 +807,7 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
       border-right: $side-image-border;
     }
   }
-
-      .images-wrapper3 {
+  .images-wrapper3 {
     @include background(url('/assets/pirate.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
     border-bottom: $side-image-border;
@@ -895,7 +815,6 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
     display: block;
     min-height: 12em;
     padding: 3em;
-
     @include media($large-screen) {
       @include span-columns(4);
       background-position: bottom;
@@ -903,8 +822,7 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
       border-right: $side-image-border;
     }
   }
-
-        .images-wrapper4 {
+  .images-wrapper4 {
     @include background(url('/assets/mapbackground.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
     border-bottom: $side-image-border;
@@ -912,7 +830,6 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
     display: block;
     min-height: 12em;
     padding: 3em;
-
     @include media($large-screen) {
       @include span-columns(4);
       background-position: bottom;
@@ -920,21 +837,17 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
       border-right: $side-image-border;
     }
   }
-
   .content {
     @include span-columns(12);
     padding: 1em 1em 4em 1em;
-
     @include media($large-screen) {
       @include span-columns(8);
       padding: 4em 4em 8em 4em;
     }
   }
-
   .content h1 {
     margin-bottom: .9em;
   }
-
   .content h4 {
     background: $side-image-background-bottom;
     color: white;
@@ -945,12 +858,10 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
     padding: 3px 8px;
     text-transform: uppercase;
   }
-
   .content p {
     color: gray;
     margin-bottom: 3em;
   }
-
   .content button {
     @include button(simple, white);
     font-size: $base-font-size;
@@ -958,4 +869,3 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
   }
   @include reset-display();
 }
-
