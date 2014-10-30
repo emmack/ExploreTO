@@ -1,10 +1,38 @@
 
 <div class='header'>
-  <a href="javascript:edu()" class='categories'>Education</a>
-  <a href="javascript:pop()"class='categories' >Population</a>
-  <a href="javascript:shelter()" class='categories' >Shelter</a>
-  <a href="javascript:trans()" class='categories'> Transportation</a>
-  <a href="javascript:inc()" class='categories'>Income</a>
+  <div class='function-menu'>
+    <a href="javascript:void(0)" class="js-accordion-trigger maps-trigger">Maps</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0)" class="js-accordion-trigger graphs-trigger">Graphs</a>
+    <div class='graphs-menu'>
+        <ul class="submenu graphs-submenu">
+          <li>
+            <a href="javascript:edu()" class='categories'>X-Axis</a>
+          </li>
+          <li>
+            <a href="javascript:edu()" class='categories'>Y-Axis</a>
+          </li>
+        </ul>
+    </div>
+    <div class='maps-menu'>
+        <ul class="submenu maps-submenu">
+          <li>
+            <a href="javascript:edu()" class='categories'>Education</a>
+          </li>
+          <li>
+            <a href="javascript:pop()"class='categories' >Population</a>
+          </li>
+          <li>
+            <a href="javascript:shelter()" class='categories' >Shelter</a>
+          </li>
+          <li>
+            <a href="javascript:trans()" class='categories'> Transportation</a>
+          </li>
+          <li>
+            <a href="javascript:inc()" class='categories'>Income</a>
+          </li>
+        </ul>
+    </div>
+  </div>
 </div>
 
 <div class='map' id="map_edu"></div>
