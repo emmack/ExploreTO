@@ -1,0 +1,15 @@
+<%= form_for (@graph) do |f| %>
+
+
+    <div class="field">
+        <%= f.label "Variable 1"%><br/>
+        <%= f.collection_select :var1_id, Var1.all, :id, :name, include_blank: true  %>
+    </div>
+ <div class="field">
+        <%= f.label 'Variable 2'%><br/>
+        <%= f.collection_select :var2_id, Var2.all, :id, :name, include_blank: true  %>
+    </div>
+    
+    <div class="actions"><%= submit_tag "Graph it!" %></div>
+<% end %>
+
