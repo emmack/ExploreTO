@@ -43,52 +43,47 @@
   <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
   <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
+</head>
+
+<body>
   <header class="centered-navigation">
     <div class="centered-navigation-wrapper">
       <a href="" class="centered-navigation-menu-button">MENU</a>
       <ul class="centered-navigation-menu" style="
       padding-top: 10px;">
-      <li class="nav-link">
-       <%= link_to "About", about_path %>
-     </li>
-     <li class="nav-link">
-      <%= link_to "Contact Us", contact_path %>
-    </li>
-    <li class="nav-link logo">
-      <%= link_to "Map Time", users_path, { 'data-no-turbolink' => true } %> 
-    </li>
-    <li class="nav-link">
-      <%if current_user %>
-      <%= link_to "Profile", user_path(current_user.id)%>
-      <%else%>
-      <%= link_to "Login", :login %>
-      <%end%>
-    </li>
-    <li class="nav-link">
-      <%if current_user %>
-      <%= link_to "Logout", :logout, method: :post %>
-      <%else%>
-      <%= link_to "Sign Up", new_user_path %>
-      <%end%>
-    </li>
-  </ul>
-</div>
+        <li class="nav-link">
+         <%= link_to "About", about_path %>
+        </li>
+        <li class="nav-link">
+          <%= link_to "Contact Us", contact_path %>
+        </li>
+        <li class="nav-link logo">
+          <%= link_to "Map Time", users_path, { 'data-no-turbolink' => true } %> 
+        </li>
+        <li class="nav-link">
+          <%if current_user %>
+            <%= link_to "Profile", user_path(current_user.id)%>
+          <%else%>
+            <%= link_to "Login", :login %>
+          <%end%>
+        </li>
+        <li class="nav-link">
+          <%if current_user %>
+            <%= link_to "Logout", :logout, method: :post %>
+          <%else%>
+            <%= link_to "Sign Up", new_user_path %>
+          <%end%>
+        </li>
+      </ul>
+    </div>
 
-<div>
-  <p id="notice"><%= flash[:notice] %></p>
-  <p id="alert"><%= flash[:alert] %></p>
-</div>
-
-</header>
-
-</head>
-<body>
-
-
-
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
+  </header>
 
   <%= yield %>
-
 
 </body>
 </html>
