@@ -2,15 +2,17 @@
 
 <div>
   <%= button_to "Download map data (.csv)", "/data_files/torontoCT2011.csv" %><br>
-  <%= button_to "Download map data (.csv)", "/data_files/torontoCT2011.geojson" %>
+  <%= button_to "Download map data (.geojson)", "/data_files/torontoCT2011.geojson" %>
 </div>
 
 <div class="grid-item">
   <div id="snapshot"></div>
 </div>
 
-<% if @favourite.tag_list %>
-  Tags:<br>
-  <em><%= @favourite.tag_list %></em><br>
-  <%= link_to "Edit tags", edit_user_favourite_url(current_user.id, @favourite.id) %>
+<% if @favourite %>
+  <% if @favourite.tag_list %>
+    Tags:<br>
+    <em><%= @favourite.tag_list %></em><br>
+    <%= link_to "Edit tags", edit_user_favourite_url(current_user.id, @favourite.id) %>
+  <% end %>
 <% end %>
