@@ -3,16 +3,6 @@
   <div class='function-menu'>
     <a href="javascript:void(0)" class="js-accordion-trigger maps-trigger">Maps</a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="javascript:void(0)" class="js-accordion-trigger graphs-trigger">Graphs</a>
-    <div class='graphs-menu'>
-        <ul class="submenu graphs-submenu">
-          <li>
-            <a href="javascript:edu()" class='categories'>X-Axis</a>
-          </li>
-          <li>
-            <a href="javascript:edu()" class='categories'>Y-Axis</a>
-          </li>
-        </ul>
-    </div>
     <div class='maps-menu'>
         <ul class="submenu maps-submenu">
           <li>
@@ -42,11 +32,17 @@
 <div class='map' id="map_trans"></div>
 <div class='map' id="map_inc"></div>
 
-
+<div class='graphPage'>
+<h1> Regression Analysis </h1><br>
+<p> Curious how one variable might affect another? Try out the trendline caluator for a customized linear regression. 
+<br>
+<br>
+Choose a variable for the X and Y axis and see the general relationship.</p>
+<br>
 <form name="valform" action="" method="POST">
-
-	X-Axis<br/>
-	Variable 1 <select name="var1" id="var1">
+<div class ='label'>
+Variable 1 </div>
+<select name="var1" id="var1">
 	<option value="Population">Population</option>
 	<option value="popchange">Population Change</option>
 	<option value="density">Population Density</option>
@@ -72,17 +68,18 @@
 	<option value="bottomincome">Population Density</option>
 	<option value="lowincome">Population Density</option>
 
-</select><br/>
+</select>
 
-Y-Axis<br/>
-Variable 2 <select name="var2" id="var2">
+
+<div class ='label'>
+Variable 2 </div> <select name="var2" id="var2">
 <option value="Population">Population</option>
 <option value="popchange">Population Change</option>
 <option value="density">Population Density</option>
 </select><br/>
 <input type="button" name="submit" value="Graph It!" onclick="drawVisualization()" />
 </form>
-
+</div>
 
 <div id='chart-box'>
 	<span id='graph'></span>

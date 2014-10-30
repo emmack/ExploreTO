@@ -15,7 +15,8 @@
       "refreshInterval": 5,
       "chartType": "ScatterChart",
       "options": {
-        "title": var1 + "vs" + var2,
+        "legend": 'none',
+        "title": var1 + " vs " + var2,
         "vAxis": {
           "title": var2
         },
@@ -26,8 +27,8 @@
           0: {}
 
         },
-        height: 1000,
-        width: 1000
+        height: 700,
+        width: 900
 
       }
     });

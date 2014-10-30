@@ -1,24 +1,44 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.submenu {
+  display: block;
+  background-color: #477dca;
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+}
+.graphPage {
+  margin-left: 15%;
+}
+h1 {
+  font-family: 'bebas';
+  color: #477dca;
+}
+.label {
+  font-family: 'bebas';
+  font-size: 25px;
+}
 #chart-box {
-  width: 1000px;
-  height: 1000px;
+  width: 800px;
+  height: 700px;
+  margin-top: 20px;
+  margin-left: 15%;
 }
 .header {
   background-color: white;
-  height: 40px;
+  height: 57px;
   text-align: center;
-  font-family: 'hipsterscriptpro';
+  font-family: 'Bebas';
   font-size: 25px;
   margin: 0 10px 40px 10px;
   padding: 10px;
   a.categories {
-    padding: 0 20px 0 29px;
+    padding: 7px 20px 0 29px;
     float: left;
     color: black;
     &:hover {
-      color: pink;
+      color: white;
     }
     &:focus {
       outline: none;
@@ -546,7 +566,8 @@ body {
     line-height: 0;
     font-size: 20px;
     a {
-      font-family: hipsterscriptpro;
+      font-family: bebas;
+      margin-top: 18px;
       font-size: 50px
     }
     @include media($large-screen) {
@@ -848,5 +869,3 @@ $side-image-border: 1px solid darken(transparentize($side-image-background-botto
   }
   @include reset-display();
 }
-
-

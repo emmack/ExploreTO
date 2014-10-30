@@ -1,3 +1,7 @@
+$(document).on('ready page:load', function() {
+  $('.graphPage').hide();
+})
+
 function edu() {
   $('.map').css("height", '0px');
   $('#map_edu').css("height", '830px');
